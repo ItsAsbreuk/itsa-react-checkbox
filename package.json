@@ -43,6 +43,7 @@
     "chai": "^3.4.1",
     "chai-equal-jsx": "^1.0.9",
     "css-loader": "^0.23.1",
+    "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.15.0",
     "istanbul": "^0.3.0",
     "jsdom": "^7.2.2",
