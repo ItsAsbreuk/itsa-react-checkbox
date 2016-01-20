@@ -29,6 +29,14 @@ const renderCheckBox = () => {
 renderCheckBox();
 ```
 
+## About the css
+
+You need the right css in order to make use of `itsa-react-checkbox`. There are 2 options:
+
+1. You can use the css-files inside the `css`-folder yourself and modify the style
+2. You can use: `Component = require("itsa-react-checkbox/lib/component-styled.jsx");` and build your project with `webpack`. This is needed, because you need the right plugin to handle a requirement of the `scss`-file.
+
+
 [View live example](http://projects.itsasbreuk.nl/react-components/itsa-checkbox/component.html)
 
 [API](http://projects.itsasbreuk.nl/react-components/itsa-checkbox/api/)
