@@ -7,9 +7,8 @@ Lightweight, focussable and responses to the spacebar.
 ## How to use:
 
 ```js
-const React = require("react"),
-    ReactDOM = require("react-dom"),
-    Component = require("itsa-react-checkbox");
+const ReactDOM = require("react-dom"),
+      Component = require("itsa-react-checkbox");
 
 let props = {
     checked: true
