@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/component.jsx - itsa-checkbox</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://avatars0.githubusercontent.com/u/8314644?v=3&amp;s=84" title="itsa-checkbox"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Checkbox.html">Checkbox</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/itsa-react-checkbox.html">itsa-react-checkbox</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/component.jsx</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * React-Component: iOS-stylish checkbox.
+ *
+ *
+ *
+ * &lt;i&gt;Copyright (c) 2016 itsasbreuk - http://itsasbreuk.nl&lt;/i&gt;&lt;br&gt;
+ * New BSD License - http://choosealicense.com/licenses/bsd-3-clause/
+ *
+ *
+ * @module itsa-react-checkbox
+ * @class Checkbox
+ * @since 2.0.0
+*/
+
+import React, {PropTypes} from &quot;react&quot;;
+import checkboxEvents from &quot;./checkbox-events&quot;;
+
+const MAIN_CLASS = &quot;itsa-checkbox&quot;,
+      MAIN_CLASS_PREFIX = MAIN_CLASS+&quot;-&quot;,
+      BTN_WIDTH = 2, // em
+      LABEL_WIDTH_CORRECTION = 0.8,
+      DEFAULT_LABEL_ON = &quot;I&quot;,
+      DEFAULT_LABEL_OFF = &quot;O&quot;,
+      EM = &quot;em&quot;,
+      CALC = &quot;calc(&quot;,
+      MINUS_TWO_PX = &quot; - 2px)&quot;;
+
+const Checkbox = React.createClass({
+
+    propTypes: {
+        /**
+         * Background-color of the &#x60;checked&#x60;-label
+         *
+         * @property bgChecked
+         * @type String
+         * @default &quot;#0078E7&quot;
+         * @since 0.0.1
+        */
+        bgChecked: PropTypes.string,
+
+        /**
+         * Background-color of the &#x60;checked&#x60;-label
+         *
+         * @property bgButton
+         * @type String
+         * @default &quot;#CCC&quot;
+         * @since 0.0.1
+        */
+        bgButton: PropTypes.string,
+
+        /**
+         * Background-color of the &#x60;unchecked&#x60;-label
+         *
+         * @property bgUnchecked
+         * @type String
+         * @default &quot;#FFF&quot;
+         * @since 0.0.1
+        */
+        bgUnchecked: PropTypes.string,
+
+        /**
+         * Whether the checkbox is checked
+         * &lt;b&gt;required&lt;/b&gt;
+         *
+         * @property checked
+         * @default false
+         * @since 0.0.1
+        */
+        checked: PropTypes.bool.isRequired,
+
+        /**
+         * The class that should be set on the element
+         *
+         * @property className
+         * @type String
+         * @since 0.0.1
+        */
+        className: PropTypes.string,
+
+        /**
+         * Font-color of the &#x60;checked&#x60;-label
+         *
+         * @property colorChecked
+         * @type String
+         * @default &quot;#FFF&quot;
+         * @since 0.0.1
+        */
+        colorChecked: PropTypes.string,
+
+        /**
+         * The font-color of the &#x60;unchecked&#x60;-label
+         *
+         * @property colorUnchecked
+         * @type String
+         * @default &quot;#444&quot;
+         * @since 0.0.1
+        */
+        colorUnchecked: PropTypes.string,
+
+        /**
+         * The label when switched &#x60;off&#x60;
+         *
+         * @property labelOff
+         * @type String
+         * @default &quot;O&quot;
+         * @since 0.0.1
+        */
+        labelOff: PropTypes.string,
+
+        /**
+         * The label when switched &#x60;on&#x60;
+         *
+         * @property labelOn
+         * @type String
+         * @default &quot;I&quot;
+         * @since 0.0.1
+        */
+        labelOn: PropTypes.string,
+
+        /**
+         * The callback whenever the checkbox wants to change its value.
+         * Use this callback to change &#x60;this.prop.checked&#x60; of the element
+         * &lt;b&gt;required&lt;/b&gt;
+         *
+         * @property onChange
+         * @type Function
+         * @since 0.0.1
+        */
+        onChange: PropTypes.func.isRequired,
+
+        /**
+         * font-size of the element. Best specified in &#x60;em&#x60;
+         *
+         * @property size
+         * @type String
+         * @default &quot;0.9em&quot;
+         * @since 0.0.1
+        */
+        size: PropTypes.string,
+
+        /**
+         * Whether the checkbox should be rendered in a &#x60;square&#x60;-style instead of rounded
+         *
+         * @property square
+         * @type Boolean
+         * @default false
+         * @since 0.0.1
+        */
+        square: PropTypes.bool,
+
+        /**
+         * The width of the element: when not set, it will be auto-fitted.
+         * You should specify a number, which is used as &#x60;em&#x60;-width.
+         *
+         * @property width
+         * @type Number
+         * @since 0.0.1
+        */
+        width: PropTypes.number
+
+    },
+
+    mixins: [checkboxEvents],
+
+    /**
+     * Returns the initial state.
+     *
+     * @method getInitialState
+     * @return Object
+     * @since 0.0.1
+     */
+    getInitialState() {
+        return {
+            btnDragPos: false,
+            transitioned: true
+        };
+    },
+
+    /**
+     * React render-method --&gt; renderes the Component.
+     *
+     * @method render
+     * @return ReactComponent
+     * @since 0.0.1
+     */
+    render() {
+
+        let classNameContainer = MAIN_CLASS_PREFIX+&quot;container&quot;,
+            elementStyles, constrainStyles, constainerStyles, labelStylesOn, labelStylesOff, labelWidth, elementWidth, constrainWidth, btnStyles, className;
+
+        const instance = this, // optimize for uglifyjs which cannot compress &#x60;this&#x60;
+              props = instance.props, // optimize for uglifyjs which cannot compress object-property names
+              labelOn = props.labelOn || DEFAULT_LABEL_ON,
+              labelOff = props.labelOff || DEFAULT_LABEL_OFF;
+
+        labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION*Math.max(labelOn.length, labelOff.length)) + 1;
+        elementWidth = labelWidth + BTN_WIDTH;
+        constrainWidth = elementWidth + labelWidth;
+
+        // ======================================================================================================
+        // === defining styles ==================================================================================
+        // ======================================================================================================
+        elementStyles = {
+            width: elementWidth+EM
+        };
+        constrainStyles = {
+            left: &quot;-&quot;+labelWidth+EM,
+            width: constrainWidth+EM
+        };
+        constainerStyles = {
+            left: instance._mousedown ? instance.state.btnDragPos+&quot;px&quot; : (props.checked ? labelWidth+EM : &quot;0&quot;)
+        };
+        labelStylesOn = {
+            width: CALC+elementWidth+EM+MINUS_TWO_PX
+        };
+        labelStylesOff = {
+            width: CALC+elementWidth+EM+MINUS_TWO_PX
+        };
+        btnStyles = {
+            left: props.checked ? CALC+labelWidth+EM+MINUS_TWO_PX : labelWidth+EM
+        };
+        instance.state.transitioned || (classNameContainer+=&#x27; notrans&#x27;);
+
+        className = MAIN_CLASS;
+        props.className &amp;&amp; (className+=&quot; &quot;+props.className);
+        props.square || (className+=&quot; bordered&quot;);
+
+        props.size &amp;&amp; (elementStyles.fontSize=props.size);
+        props.colorChecked &amp;&amp; (labelStylesOn.color=props.colorChecked);
+        props.bgChecked &amp;&amp; (labelStylesOn.backgroundColor=props.bgChecked);
+        props.colorUnchecked &amp;&amp; (labelStylesOff.color=props.colorUnchecked);
+        props.bgUnchecked &amp;&amp; (labelStylesOff.backgroundColor=props.bgUnchecked);
+        props.bgButton &amp;&amp; (btnStyles.backgroundColor=props.bgButton);
+        // ======================================================================================================
+        // ======================================================================================================
+
+        return (
+            &lt;div className={className}
+                tabIndex=&quot;1&quot;
+                style={elementStyles}
+                onClick={instance.handleClick}
+                onBlur={instance.handleBlur}
+                onFocus={instance.handleFocus}
+                onKeyPress={instance.handleKeyPress} &gt;
+
+                &lt;div className={MAIN_CLASS_PREFIX+&quot;constrain&quot;} style={constrainStyles}&gt;
+                    &lt;div className={classNameContainer} style={constainerStyles}&gt;
+                        &lt;div className={MAIN_CLASS_PREFIX+&quot;on&quot;} style={labelStylesOn}&gt;{labelOn}&lt;/div&gt;
+                        &lt;div className={MAIN_CLASS_PREFIX+&quot;off&quot;} style={labelStylesOff}&gt;{labelOff}&lt;/div&gt;
+                        &lt;div className={MAIN_CLASS_PREFIX+&quot;btn&quot;}
+                            onMouseDown={instance.handleMouseDown}
+                            onTouchStart={instance.handleTouchStart}
+                            onTouchMove={instance.handleTouchMove}
+                            onTouchEnd={instance.handleMouseUp.bind(this, true)}
+                            style={btnStyles} /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        );
+    }
+
+});
+
+module.exports = Checkbox;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

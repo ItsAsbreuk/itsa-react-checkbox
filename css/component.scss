@@ -1,0 +1,144 @@
+$color-checked: #FFF;
+$background-color-checked: #0078E7;
+$color-unchecked: #444;
+$background-color-unchecked: #FFF;
+$background-color-button: #CCC;
+$size: 0.9em;
+
+.itsa-checkbox {
+    font-size: $size;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 2em;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* remove gray color when pressed on iOS */
+}
+
+.itsa-checkbox.bordered {
+    border-radius: 1em;
+}
+
+.itsa-checkbox:focus {
+    outline: 0;
+}
+
+.itsa-checkbox div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+}
+
+.itsa-checkbox:focus .itsa-checkbox-on,
+.itsa-checkbox:focus .itsa-checkbox-off {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.20)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.20));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.20));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.20));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.20));
+    box-shadow: 0 0 0 2px rgba(0,0,0, 0.4) inset;
+}
+
+.itsa-checkbox:focus .itsa-checkbox-btn {
+    border: solid 1px #888;
+    box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.06);
+}
+
+.itsa-checkbox .itsa-checkbox-constrain {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 0; /* left will be calculated by i-checkbox */
+}
+
+.itsa-checkbox .itsa-checkbox-container {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    left: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: left 0.25s;
+    -moz-transition: left 0.25s;
+    -ms-transition: left 0.25s;
+    -o-transition: left 0.25s;
+    transition: left 0.25s;
+}
+
+.itsa-checkbox .itsa-checkbox-container.notrans {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: all 0s !important; /* opera doesn't support none */
+    transition: none !important;
+}
+
+.itsa-checkbox .itsa-checkbox-on,
+.itsa-checkbox .itsa-checkbox-off {
+    height: 100%;
+    line-height: 2em;
+    position: static;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    box-shadow: inset 0 0.3em 0.5em rgba(0, 0, 0, 0.18);
+}
+
+.itsa-checkbox.bordered .itsa-checkbox-on,
+.itsa-checkbox.bordered .itsa-checkbox-off {
+    border-radius: 1em;
+}
+
+.itsa-checkbox .itsa-checkbox-on {
+    color: $color-checked;
+    background-color: $background-color-checked;
+    padding-right: 2em;
+    left: 1px;
+}
+
+.itsa-checkbox .itsa-checkbox-off {
+    background-color: $background-color-unchecked;
+    color: $color-unchecked;
+    padding-left: 2em;
+    margin-left: calc(-2em + 2px);
+}
+
+.itsa-checkbox.bordered .itsa-checkbox-on {
+    padding-right: 1.5em;
+}
+
+.itsa-checkbox.bordered .itsa-checkbox-off {
+    padding-left: 1.5em;
+}
+
+.itsa-checkbox .itsa-checkbox-btn {
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.18);
+    background-color: #fff;
+    border: solid 1px $background-color-button;
+    width: 2em;
+    height: 100%;
+}
+
+.itsa-checkbox.bordered .itsa-checkbox-btn {
+    border-radius: 100%;
+}
