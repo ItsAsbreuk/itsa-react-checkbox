@@ -216,12 +216,12 @@ const Checkbox = React.createClass({
         /**
          * font-size of the element. Best specified in &#x60;em&#x60;
          *
-         * @property size
+         * @property fontSize
          * @type String
          * @default &quot;0.9em&quot;
          * @since 0.0.1
         */
-        size: PropTypes.string,
+        fontSize: PropTypes.string,
 
         /**
          * Whether the checkbox should be rendered in a &#x60;square&#x60;-style instead of rounded
@@ -310,7 +310,7 @@ const Checkbox = React.createClass({
         props.className &amp;&amp; (className+=&quot; &quot;+props.className);
         props.square || (className+=&quot; bordered&quot;);
 
-        props.size &amp;&amp; (elementStyles.fontSize=props.size);
+        props.fontSize &amp;&amp; (elementStyles.fontSize=props.fontSize);
         props.colorChecked &amp;&amp; (labelStylesOn.color=props.colorChecked);
         props.bgChecked &amp;&amp; (labelStylesOn.backgroundColor=props.bgChecked);
         props.colorUnchecked &amp;&amp; (labelStylesOff.color=props.colorUnchecked);

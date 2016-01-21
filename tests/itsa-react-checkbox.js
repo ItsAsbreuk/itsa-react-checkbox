@@ -207,7 +207,7 @@ describe("React Component", function () {
     });
 
     it("Rendering different sized component", function () {
-        renderer.render(<Component size="5em" checked={false} onChange={NOOP} />);
+        renderer.render(<Component fontSize="5em" checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"

@@ -356,7 +356,7 @@
             "line": 133,
             "description": "font-size of the element. Best specified in `em`",
             "itemtype": "property",
-            "name": "size",
+            "name": "fontSize",
             "type": "String",
             "default": "\"0.9em\"",
             "since": "0.0.1",

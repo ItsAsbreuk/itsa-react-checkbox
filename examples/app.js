@@ -20238,12 +20238,12 @@
 	    /**
 	     * font-size of the element. Best specified in `em`
 	     *
-	     * @property size
+	     * @property fontSize
 	     * @type String
 	     * @default "0.9em"
 	     * @since 0.0.1
 	    */
-	    size: _react.PropTypes.string,
+	    fontSize: _react.PropTypes.string,
 
 	    /**
 	     * Whether the checkbox should be rendered in a `square`-style instead of rounded
@@ -20343,7 +20343,7 @@
 	    props.className && (className += " " + props.className);
 	    props.square || (className += " bordered");
 
-	    props.size && (elementStyles.fontSize = props.size);
+	    props.fontSize && (elementStyles.fontSize = props.fontSize);
 	    props.colorChecked && (labelStylesOn.color = props.colorChecked);
 	    props.bgChecked && (labelStylesOn.backgroundColor = props.bgChecked);
 	    props.colorUnchecked && (labelStylesOff.color = props.colorUnchecked);
