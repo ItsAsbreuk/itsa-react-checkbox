@@ -259,10 +259,6 @@ const handleChangePassword = (e) => {
 const handleSubmit = (e) => {
     const formValid = e.formValid,
           form = e.target;
-    // redefineProps({
-    //     formValid: formValid,
-    //     formValidated: true
-    // });
     formValid || form.focusUnvalidated();
 };
 
