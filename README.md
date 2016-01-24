@@ -59,6 +59,7 @@ body {
     border: solid 1px #AAA;
     padding: 1em;
     background-color: #FAFAFA;
+    margin: 3em auto;
 }
 #component-container button {
     width: 100%;
@@ -72,6 +73,7 @@ body {
     color: #F34F4F;
     visibility: hidden;
     margin-top: 0.4em;
+    font-size: 0.8em;
 }
 #component-container .checkbox-error-text.checkbox-text {
     visibility: visible;
