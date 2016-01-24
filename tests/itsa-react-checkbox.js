@@ -35,7 +35,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
@@ -64,7 +64,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "2em"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
@@ -93,7 +93,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "5em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-3em", width: "8em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(5em - 2px)"}}>ON</div>
@@ -122,7 +122,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "12em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-10em", width: "22em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(12em - 2px)"}}>I</div>
@@ -151,7 +151,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
@@ -187,7 +187,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{backgroundColor: "#111", color: "#444", width: "calc(4em - 2px)"}}>I</div>
@@ -216,7 +216,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{fontSize:"5em", width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
@@ -245,7 +245,7 @@ describe("React Component", function () {
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
               style={{width: "4em"}}
-              tabIndex="1">
+              tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "0"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
