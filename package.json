@@ -1,6 +1,6 @@
 {
   "name": "itsa-react-checkbox",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "iOS-stylisch checkbox for react",
   "author": [
     {
@@ -17,6 +17,7 @@
   },
   "keywords": [
     "itsasbreuk",
+    "itsa",
     "react-component",
     "checkbox",
     "ios",

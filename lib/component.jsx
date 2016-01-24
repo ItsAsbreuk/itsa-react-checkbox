@@ -15,6 +15,7 @@
 */
 
 import React, {PropTypes} from "react";
+import ReactDom from "react-dom";
 import checkboxEvents from "./checkbox-events";
 
 const MAIN_CLASS = "itsa-checkbox",
@@ -30,6 +31,15 @@ const MAIN_CLASS = "itsa-checkbox",
 const Checkbox = React.createClass({
 
     propTypes: {
+        /**
+         * Whether to autofocus the Component.
+         *
+         * @property autoFocus
+         * @type Boolean
+         * @since 0.0.1
+        */
+        autoFocus: PropTypes.bool,
+
         /**
          * Background-color of the `checked`-label
          *
@@ -151,6 +161,15 @@ const Checkbox = React.createClass({
         square: PropTypes.bool,
 
         /**
+         * The tabindex of the Component.
+         *
+         * @property type
+         * @type Number
+         * @since 0.1.2
+        */
+        tabIndex: PropTypes.number,
+
+        /**
          * The width of the element: when not set, it will be auto-fitted.
          * You should specify a number, which is used as `em`-width.
          *
@@ -163,6 +182,30 @@ const Checkbox = React.createClass({
     },
 
     mixins: [checkboxEvents],
+
+    /**
+     * componentDidMount will call `this.activatePlaces()`;
+     *
+     * @method componentDidMount
+     * @since 0.0.1
+     */
+    componentDidMount() {
+        const instance = this;
+        instance._domNode = ReactDom.findDOMNode(instance);
+        instance.props.autoFocus && instance.focus();
+    },
+
+    /**
+     * Sets the focus on the Component.
+     *
+     * @method focus
+     * @chainable
+     * @since 0.0.1
+     */
+    focus() {
+        this._domNode.focus();
+        return this;
+    },
 
     /**
      * Returns the initial state.
@@ -193,7 +236,8 @@ const Checkbox = React.createClass({
         const instance = this, // optimize for uglifyjs which cannot compress `this`
               props = instance.props, // optimize for uglifyjs which cannot compress object-property names
               labelOn = props.labelOn || DEFAULT_LABEL_ON,
-              labelOff = props.labelOff || DEFAULT_LABEL_OFF;
+              labelOff = props.labelOff || DEFAULT_LABEL_OFF,
+              tabIndex = props.tabIndex || 1;
 
         labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION*Math.max(labelOn.length, labelOff.length)) + 1;
         elementWidth = labelWidth + BTN_WIDTH;
@@ -238,7 +282,7 @@ const Checkbox = React.createClass({
 
         return (
             <div className={className}
-                tabIndex="1"
+                tabIndex={tabIndex}
                 style={elementStyles}
                 onClick={instance.handleClick}
                 onBlur={instance.handleBlur}
