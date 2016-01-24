@@ -44,7 +44,8 @@ You need the right css in order to make use of `itsa-react-checkbox`. There are 
 
 ## Sophisticated forms
 
-In adjunction with other `itsa-react-components`, you can build very sophisticated forms: [view sophisticated form with validation](http://projects.itsasbreuk.nl/react-components/itsa-input/component.html)
+In adjunction with other `itsa-react-components`, you can build very sophisticated forms:
+[example sophisticated form with validation](http://projects.itsasbreuk.nl/react-components/itsa-input/component.html)
 
 This example has the following code:
 
@@ -92,7 +93,7 @@ body {
 <script src="./app.js"></script>
 ```
 
-####code
+####app.js
 ```js
 "use strict";
 
