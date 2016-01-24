@@ -9,7 +9,7 @@ Lightweight, focussable and responses to the spacebar.
 ```js
 const React = require("react"),
       ReactDOM = require("react-dom"),
-      Component = require("itsa-react-checkbox");
+      Checkbox = require("itsa-react-checkbox");
 
 let props = {
     checked: true
@@ -22,7 +22,7 @@ const handleChange = () => {
 
 const renderCheckBox = () => {
     ReactDOM.render(
-        <Component {...props} onChange={handleChange} />,
+        <Checkbox {...props} onChange={handleChange} />,
         document.getElementById("container")
     );
 };
