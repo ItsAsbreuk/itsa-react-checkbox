@@ -61,30 +61,30 @@ body {
     background-color: #FAFAFA;
     margin: 3em auto;
 }
-#component-container button {
+button {
     width: 100%;
     text-align: center;
     margin-top: 1em;
 }
-#component-container form.invalid .formheader {
+form.invalid .formheader {
     color: #F34F4F;
 }
-#component-container .checkbox-text {
+.checkbox-text {
     color: #F34F4F;
     visibility: hidden;
     margin-top: 0.4em;
     font-size: 0.8em;
 }
-#component-container .checkbox-error-text.checkbox-text {
+.checkbox-error-text.checkbox-text {
     visibility: visible;
 }
-#component-container .itsa-input.last {
+.itsa-input.last {
     margin-bottom: 1.4em;
 }
-#component-container .itsa-checkbox {
+.itsa-checkbox {
     margin-right: 0.5em;
 }
-#component-container .form-text {
+.form-text {
     color: #444;
 }
 ```
@@ -104,11 +104,17 @@ import "js-ext/lib/object";
 import "js-ext/lib/string";
 
 import "itsa-react-checkbox/css/component.scss";
+import "itsa-react-input/css/component.scss";
+import "itsa-react-input/css/purecss-component.scss";
+import "itsa-react-textarea/css/component.scss";
 
 const React = require("react"),
     ReactDOM = require("react-dom"),
     Input = require("itsa-react-input"),
-    Checkbox = require("itsa-react-checkbox");
+    MaskedInput = require("itsa-react-maskedinput"),
+    Checkbox = require("itsa-react-checkbox"),
+    Textarea = require("itsa-react-textarea"),
+    REG_EXP_PHONE = /^\(\d{0,3}\) \d{0,3}\-\d{0,4}$/;
 
 
 /*******************************************************
@@ -125,6 +131,9 @@ const MyForm = React.createClass({
         else if (!validated.email) {
             instance.refs.email.focus();
         }
+        else if (!validated.phone) {
+            instance.refs.phone.focus();
+        }
         else if (!validated.password) {
             instance.refs.password.focus();
         }
@@ -135,7 +144,7 @@ const MyForm = React.createClass({
 
     formValid() {
         const validated = this.props.validated;
-        return validated.name && validated.email && validated.password && validated.termsAccepted;
+        return validated.name && validated.email && validated.phone  && validated.password && validated.termsAccepted;
     },
 
     getInitialState() {
@@ -195,7 +204,6 @@ const MyForm = React.createClass({
                         className="pure-input-1"
                         errorMsg="Emailformat is: user@example.com"
                         formValidated={formValidated}
-                        helpText="use format: user@example.com"
                         markRequired={true}
                         markValidated={true}
                         onChange={props.onChangeEmail}
@@ -204,8 +212,22 @@ const MyForm = React.createClass({
                         tabIndex={2}
                         validated={props.validated.email}
                         value={props.email} />
+                    <MaskedInput
+                        className="pure-input-1"
+                        errorMsg="Phone number format: (555) 555-5555"
+                        formValidated={formValidated}
+                        helpText="format: (555) 555-5555"
+                        markRequired={true}
+                        markValidated={true}
+                        mask="(111) 111-1111"
+                        onChange={props.onChangePhone}
+                        placeholder="Phone"
+                        ref="phone"
+                        tabIndex={4}
+                        validated={props.validated.phone}
+                        value={props.phone} />
                     <Input
-                        className="pure-input-1 last"
+                        className="pure-input-1"
                         errorMsg="Use at least 5 characters"
                         formValidated={formValidated}
                         markRequired={true}
@@ -213,15 +235,24 @@ const MyForm = React.createClass({
                         onChange={props.onChangePassword}
                         placeholder="Password"
                         ref="password"
-                        tabIndex={3}
+                        tabIndex={5}
                         type="password"
                         validated={props.validated.password}
                         value={props.password} />
+                    <Textarea
+                        className="pure-input-1 last"
+                        onChange={props.onChangeComment}
+                        placeholder="Comment"
+                        ref="comment"
+                        tabIndex={6}
+                        value={props.comment} />
                     <Checkbox
                         checked={props.termsAccepted}
+                        formValidated={formValidated}
                         onChange={props.onTermsAccepted}
                         ref="terms"
-                        tabIndex={4} />
+                        tabIndex={7}
+                        validated={props.validated.termsAccepted} />
                     <span className="itsa-input-required-msg-after">General terms accepted</span>
                     <div className={generalTermsMsgClass}>
                         You need to accept our terms
@@ -256,6 +287,14 @@ const handleChangeEmail = (e) => {
 
 const handleChangePassword = (e) => {
     redefineProps('password', e.target.value);
+};
+
+const handleChangePhone = (e) => {
+    redefineProps('phone', e.target.value);
+};
+
+const handleChangeComment = (e) => {
+    redefineProps('comment', e.target.value);
 };
 
 const handleSubmit = (e) => {
@@ -297,6 +336,10 @@ const validatorsDefinition = {
         return val && (val.length>=5);
     },
 
+    phone(val) {
+        return REG_EXP_PHONE.test(val) || !val;
+    },
+
     required(val) {
         return !!val;
     }
@@ -319,16 +362,21 @@ let props = {
     name: '',
     email: '',
     password: '',
+    comment: '',
+    phone: '',
     termsAccepted: false,
     onChangeName: handleChangeName,
     onChangeEmail: handleChangeEmail,
     onChangePassword: handleChangePassword,
+    onChangePhone: handleChangePhone,
+    onChangeComment: handleChangeComment,
     onSubmit: handleSubmit,
     onTermsAccepted: handleTermsAccepted,
     validated: {},
     validators: {
         email: ["required", "email"],
         name: ["required"],
+        phone: ["required", "phone"],
         termsAccepted: ["checked"],
         password: ["required", "password"]
     }
