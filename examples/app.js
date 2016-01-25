@@ -19776,7 +19776,7 @@
 
 
 	// module
-	exports.push([module.id, ".itsa-checkbox {\n  font-size: 0.9em;\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  position: relative;\n  vertical-align: middle;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 2em;\n  z-index: 1;\n  overflow: hidden;\n  border: 1px solid #CCC;\n  -webkit-tap-highlight-color: transparent;\n  /* remove gray color when pressed on iOS */ }\n\n.itsa-checkbox.bordered {\n  border-radius: 1em; }\n\n.itsa-checkbox:focus {\n  outline: 0; }\n\n.itsa-checkbox div {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  display: block; }\n\n.itsa-checkbox:focus .itsa-checkbox-on,\n.itsa-checkbox:focus .itsa-checkbox-off {\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);\n  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.2)));\n  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4) inset; }\n\n.itsa-checkbox:focus .itsa-checkbox-btn {\n  border: solid 1px #888;\n  box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.06); }\n\n.itsa-checkbox .itsa-checkbox-constrain {\n  height: 100%;\n  padding: 0;\n  margin: 0;\n  position: relative;\n  top: 0;\n  /* left will be calculated by i-checkbox */ }\n\n.itsa-checkbox .itsa-checkbox-container {\n  position: relative;\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  left: 0;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: left 0.25s;\n  -moz-transition: left 0.25s;\n  -ms-transition: left 0.25s;\n  -o-transition: left 0.25s;\n  transition: left 0.25s; }\n\n.itsa-checkbox .itsa-checkbox-container.notrans {\n  -webkit-transition: none !important;\n  -moz-transition: none !important;\n  -ms-transition: none !important;\n  -o-transition: all 0s !important;\n  /* opera doesn't support none */\n  transition: none !important; }\n\n.itsa-checkbox .itsa-checkbox-on,\n.itsa-checkbox .itsa-checkbox-off {\n  height: 100%;\n  line-height: 2em;\n  position: static;\n  text-align: center;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  float: left;\n  box-shadow: inset 0 0.3em 0.5em rgba(0, 0, 0, 0.18); }\n\n.itsa-checkbox.bordered .itsa-checkbox-on,\n.itsa-checkbox.bordered .itsa-checkbox-off {\n  border-radius: 1em; }\n\n.itsa-checkbox .itsa-checkbox-on {\n  color: #FFF;\n  background-color: #0078E7;\n  padding-right: 2em;\n  left: 1px; }\n\n.itsa-checkbox .itsa-checkbox-off {\n  background-color: #FFF;\n  color: #444;\n  padding-left: 2em;\n  margin-left: calc(-2em + 2px); }\n\n.itsa-checkbox.bordered .itsa-checkbox-on {\n  padding-right: 1.5em; }\n\n.itsa-checkbox.bordered .itsa-checkbox-off {\n  padding-left: 1.5em; }\n\n.itsa-checkbox .itsa-checkbox-btn {\n  position: relative;\n  z-index: 1;\n  box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.18);\n  background-color: #fff;\n  border: solid 1px #CCC;\n  width: 2em;\n  height: 100%; }\n\n.itsa-checkbox.bordered .itsa-checkbox-btn {\n  border-radius: 100%; }\n", ""]);
+	exports.push([module.id, ".itsa-checkbox {\n  font-size: 0.9em;\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  position: relative;\n  vertical-align: middle;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 2em;\n  z-index: 1;\n  overflow: hidden;\n  border: 1px solid #CCC;\n  -webkit-tap-highlight-color: transparent;\n  /* remove gray color when pressed on iOS */ }\n\n.itsa-checkbox.bordered {\n  border-radius: 1em; }\n\n.itsa-checkbox.error {\n  border-color: #FF6A6A !important; }\n\n.itsa-checkbox:focus {\n  outline: 0; }\n\n.itsa-checkbox div {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  display: block; }\n\n.itsa-checkbox:focus .itsa-checkbox-on,\n.itsa-checkbox:focus .itsa-checkbox-off {\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);\n  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.2)));\n  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2));\n  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4) inset; }\n\n.itsa-checkbox:focus .itsa-checkbox-btn {\n  border: solid 1px #888;\n  box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.06); }\n\n.itsa-checkbox .itsa-checkbox-constrain {\n  height: 100%;\n  padding: 0;\n  margin: 0;\n  position: relative;\n  top: 0;\n  /* left will be calculated by i-checkbox */ }\n\n.itsa-checkbox .itsa-checkbox-container {\n  position: relative;\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  left: 0;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-transition: left 0.25s;\n  -moz-transition: left 0.25s;\n  -ms-transition: left 0.25s;\n  -o-transition: left 0.25s;\n  transition: left 0.25s; }\n\n.itsa-checkbox .itsa-checkbox-container.notrans {\n  -webkit-transition: none !important;\n  -moz-transition: none !important;\n  -ms-transition: none !important;\n  -o-transition: all 0s !important;\n  /* opera doesn't support none */\n  transition: none !important; }\n\n.itsa-checkbox .itsa-checkbox-on,\n.itsa-checkbox .itsa-checkbox-off {\n  height: 100%;\n  line-height: 2em;\n  position: static;\n  text-align: center;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  float: left;\n  box-shadow: inset 0 0.3em 0.5em rgba(0, 0, 0, 0.18); }\n\n.itsa-checkbox.bordered .itsa-checkbox-on,\n.itsa-checkbox.bordered .itsa-checkbox-off {\n  border-radius: 1em; }\n\n.itsa-checkbox .itsa-checkbox-on {\n  color: #FFF;\n  background-color: #0078E7;\n  padding-right: 2em;\n  left: 1px; }\n\n.itsa-checkbox .itsa-checkbox-off {\n  background-color: #FFF;\n  color: #444;\n  padding-left: 2em;\n  margin-left: calc(-2em + 2px); }\n\n.itsa-checkbox.bordered .itsa-checkbox-on {\n  padding-right: 1.5em; }\n\n.itsa-checkbox.bordered .itsa-checkbox-off {\n  padding-left: 1.5em; }\n\n.itsa-checkbox .itsa-checkbox-btn {\n  position: relative;\n  z-index: 1;\n  box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.18);\n  background-color: #fff;\n  border: solid 1px #CCC;\n  width: 2em;\n  height: 100%; }\n\n.itsa-checkbox.bordered .itsa-checkbox-btn {\n  border-radius: 100%; }\n", ""]);
 
 	// exports
 
@@ -20114,6 +20114,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _checkboxEvents = __webpack_require__(165);
 
 	var _checkboxEvents2 = _interopRequireDefault(_checkboxEvents);
@@ -20135,6 +20139,15 @@
 	  displayName: "Checkbox",
 
 	  propTypes: {
+	    /**
+	     * Whether to autofocus the Component.
+	     *
+	     * @property autoFocus
+	     * @type Boolean
+	     * @since 0.0.1
+	    */
+	    autoFocus: _react.PropTypes.bool,
+
 	    /**
 	     * Background-color of the `checked`-label
 	     *
@@ -20205,6 +20218,16 @@
 	    colorUnchecked: _react.PropTypes.string,
 
 	    /**
+	     * Whether the parent-form has been validated.
+	     * This value is needed to determine if the validate-status should be set.
+	     *
+	     * @property formValidated
+	     * @type Boolean
+	     * @since 0.2.0
+	    */
+	    formValidated: _react.PropTypes.bool,
+
+	    /**
 	     * The label when switched `off`
 	     *
 	     * @property labelOff
@@ -20256,6 +20279,24 @@
 	    square: _react.PropTypes.bool,
 
 	    /**
+	     * The tabindex of the Component.
+	     *
+	     * @property type
+	     * @type Number
+	     * @since 0.1.2
+	    */
+	    tabIndex: _react.PropTypes.number,
+
+	    /**
+	     * Whether the property is validated right.
+	     *
+	     * @property validated
+	     * @type Boolean
+	     * @since 0.0.1
+	    */
+	    validated: _react.PropTypes.bool,
+
+	    /**
 	     * The width of the element: when not set, it will be auto-fitted.
 	     * You should specify a number, which is used as `em`-width.
 	     *
@@ -20268,6 +20309,30 @@
 	  },
 
 	  mixins: [_checkboxEvents2.default],
+
+	  /**
+	   * componentDidMount will call `this.activatePlaces()`;
+	   *
+	   * @method componentDidMount
+	   * @since 0.0.1
+	   */
+	  componentDidMount: function componentDidMount() {
+	    var instance = this;
+	    instance._domNode = _reactDom2.default.findDOMNode(instance);
+	    instance.props.autoFocus && instance.focus();
+	  },
+
+	  /**
+	   * Sets the focus on the Component.
+	   *
+	   * @method focus
+	   * @chainable
+	   * @since 0.0.1
+	   */
+	  focus: function focus() {
+	    this._domNode.focus();
+	    return this;
+	  },
 
 	  /**
 	   * Returns the initial state.
@@ -20309,7 +20374,9 @@
 	    props = instance.props,
 	        // optimize for uglifyjs which cannot compress object-property names
 	    labelOn = props.labelOn || DEFAULT_LABEL_ON,
-	        labelOff = props.labelOff || DEFAULT_LABEL_OFF;
+	        labelOff = props.labelOff || DEFAULT_LABEL_OFF,
+	        tabIndex = props.tabIndex || 1,
+	        errored = props.validated === false && props.formValidated;
 
 	    labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION * Math.max(labelOn.length, labelOff.length)) + 1;
 	    elementWidth = labelWidth + BTN_WIDTH;
@@ -20342,6 +20409,7 @@
 	    className = MAIN_CLASS;
 	    props.className && (className += " " + props.className);
 	    props.square || (className += " bordered");
+	    errored && (className += " error");
 
 	    props.fontSize && (elementStyles.fontSize = props.fontSize);
 	    props.colorChecked && (labelStylesOn.color = props.colorChecked);
@@ -20355,7 +20423,7 @@
 	    return _react2.default.createElement(
 	      "div",
 	      { className: className,
-	        tabIndex: "1",
+	        tabIndex: tabIndex,
 	        style: elementStyles,
 	        onClick: instance.handleClick,
 	        onBlur: instance.handleBlur,

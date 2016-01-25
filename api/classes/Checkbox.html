@@ -119,11 +119,19 @@ New BSD License - <a href="http://choosealicense.com/licenses/bsd-3-clause/">htt
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_componentDidMount">componentDidMount</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_componentWillUnmount">componentWillUnmount</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#method_detachDragEvents">detachDragEvents</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_focus">focus</a>
 
                             </li>
                             <li class="index-item method">
@@ -182,6 +190,10 @@ New BSD License - <a href="http://choosealicense.com/licenses/bsd-3-clause/">htt
 
                     <ul class="index-list properties">
                             <li class="index-item property">
+                                <a href="#property_autoFocus">autoFocus</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#property_bgButton">bgButton</a>
 
                             </li>
@@ -214,6 +226,10 @@ New BSD License - <a href="http://choosealicense.com/licenses/bsd-3-clause/">htt
 
                             </li>
                             <li class="index-item property">
+                                <a href="#property_formValidated">formValidated</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#property_labelOff">labelOff</a>
 
                             </li>
@@ -227,6 +243,14 @@ New BSD License - <a href="http://choosealicense.com/licenses/bsd-3-clause/">htt
                             </li>
                             <li class="index-item property">
                                 <a href="#property_square">square</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_type">type</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_validated">validated</a>
 
                             </li>
                             <li class="index-item property">
@@ -268,6 +292,38 @@ New BSD License - <a href="http://choosealicense.com/licenses/bsd-3-clause/">htt
     <div class="description">
         <p>Gets invoked after the Component mounted.
 Will set several refences to internal nodes for quick referal.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_componentDidMount" class="method item">
+    <h3 class="name"><code>componentDidMount</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l205"><code>lib&#x2F;component.jsx:205</code></a>
+        </p>
+
+
+
+            <p>Available since 0.0.1</p>
+    </div>
+
+    <div class="description">
+        <p>componentDidMount will call <code>this.activatePlaces()</code>;</p>
 
     </div>
 
@@ -341,6 +397,39 @@ Will detach some window-eventlisteners.</p>
 
 
 </div>
+<div id="method_focus" class="method item">
+    <h3 class="name"><code>focus</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+        <span class="flag chainable">chainable</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l217"><code>lib&#x2F;component.jsx:217</code></a>
+        </p>
+
+
+
+            <p>Available since 0.0.1</p>
+    </div>
+
+    <div class="description">
+        <p>Sets the focus on the Component.</p>
+
+    </div>
+
+
+
+
+</div>
 <div id="method_getInitialState" class="method item">
     <h3 class="name"><code>getInitialState</code></h3>
 
@@ -359,7 +448,7 @@ Will detach some window-eventlisteners.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l167"><code>lib&#x2F;component.jsx:167</code></a>
+        <a href="../files/lib_component.jsx.html#l229"><code>lib&#x2F;component.jsx:229</code></a>
         </p>
 
 
@@ -837,7 +926,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l181"><code>lib&#x2F;component.jsx:181</code></a>
+        <a href="../files/lib_component.jsx.html#l243"><code>lib&#x2F;component.jsx:243</code></a>
         </p>
 
 
@@ -900,6 +989,32 @@ Prepares for dragging the button on mobile devices.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
+<div id="property_autoFocus" class="property item">
+    <h3 class="name"><code>autoFocus</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l34"><code>lib&#x2F;component.jsx:34</code></a>
+        </p>
+
+
+            <p>Available since 0.0.1</p>
+    </div>
+
+    <div class="description">
+        <p>Whether to autofocus the Component.</p>
+
+    </div>
+
+
+
+</div>
 <div id="property_bgButton" class="property item">
     <h3 class="name"><code>bgButton</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
@@ -911,7 +1026,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l43"><code>lib&#x2F;component.jsx:43</code></a>
+        <a href="../files/lib_component.jsx.html#l53"><code>lib&#x2F;component.jsx:53</code></a>
         </p>
 
 
@@ -938,7 +1053,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l33"><code>lib&#x2F;component.jsx:33</code></a>
+        <a href="../files/lib_component.jsx.html#l43"><code>lib&#x2F;component.jsx:43</code></a>
         </p>
 
 
@@ -965,7 +1080,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l53"><code>lib&#x2F;component.jsx:53</code></a>
+        <a href="../files/lib_component.jsx.html#l63"><code>lib&#x2F;component.jsx:63</code></a>
         </p>
 
 
@@ -992,7 +1107,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l63"><code>lib&#x2F;component.jsx:63</code></a>
+        <a href="../files/lib_component.jsx.html#l73"><code>lib&#x2F;component.jsx:73</code></a>
         </p>
 
 
@@ -1020,7 +1135,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l73"><code>lib&#x2F;component.jsx:73</code></a>
+        <a href="../files/lib_component.jsx.html#l83"><code>lib&#x2F;component.jsx:83</code></a>
         </p>
 
 
@@ -1046,7 +1161,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l82"><code>lib&#x2F;component.jsx:82</code></a>
+        <a href="../files/lib_component.jsx.html#l92"><code>lib&#x2F;component.jsx:92</code></a>
         </p>
 
 
@@ -1073,7 +1188,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l92"><code>lib&#x2F;component.jsx:92</code></a>
+        <a href="../files/lib_component.jsx.html#l102"><code>lib&#x2F;component.jsx:102</code></a>
         </p>
 
 
@@ -1100,7 +1215,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l133"><code>lib&#x2F;component.jsx:133</code></a>
+        <a href="../files/lib_component.jsx.html#l153"><code>lib&#x2F;component.jsx:153</code></a>
         </p>
 
 
@@ -1116,6 +1231,33 @@ Prepares for dragging the button on mobile devices.</p>
 
 
 </div>
+<div id="property_formValidated" class="property item">
+    <h3 class="name"><code>formValidated</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l112"><code>lib&#x2F;component.jsx:112</code></a>
+        </p>
+
+
+            <p>Available since 0.2.0</p>
+    </div>
+
+    <div class="description">
+        <p>Whether the parent-form has been validated.
+This value is needed to determine if the validate-status should be set.</p>
+
+    </div>
+
+
+
+</div>
 <div id="property_labelOff" class="property item">
     <h3 class="name"><code>labelOff</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
@@ -1127,7 +1269,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l102"><code>lib&#x2F;component.jsx:102</code></a>
+        <a href="../files/lib_component.jsx.html#l122"><code>lib&#x2F;component.jsx:122</code></a>
         </p>
 
 
@@ -1154,7 +1296,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l112"><code>lib&#x2F;component.jsx:112</code></a>
+        <a href="../files/lib_component.jsx.html#l132"><code>lib&#x2F;component.jsx:132</code></a>
         </p>
 
 
@@ -1181,7 +1323,7 @@ Prepares for dragging the button on mobile devices.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l122"><code>lib&#x2F;component.jsx:122</code></a>
+        <a href="../files/lib_component.jsx.html#l142"><code>lib&#x2F;component.jsx:142</code></a>
         </p>
 
 
@@ -1209,7 +1351,7 @@ Use this callback to change <code>this.prop.checked</code> of the element
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l143"><code>lib&#x2F;component.jsx:143</code></a>
+        <a href="../files/lib_component.jsx.html#l163"><code>lib&#x2F;component.jsx:163</code></a>
         </p>
 
 
@@ -1225,6 +1367,58 @@ Use this callback to change <code>this.prop.checked</code> of the element
 
 
 </div>
+<div id="property_type" class="property item">
+    <h3 class="name"><code>type</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l173"><code>lib&#x2F;component.jsx:173</code></a>
+        </p>
+
+
+            <p>Available since 0.1.2</p>
+    </div>
+
+    <div class="description">
+        <p>The tabindex of the Component.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_validated" class="property item">
+    <h3 class="name"><code>validated</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_component.jsx.html#l182"><code>lib&#x2F;component.jsx:182</code></a>
+        </p>
+
+
+            <p>Available since 0.0.1</p>
+    </div>
+
+    <div class="description">
+        <p>Whether the property is validated right.</p>
+
+    </div>
+
+
+
+</div>
 <div id="property_width" class="property item">
     <h3 class="name"><code>width</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
@@ -1236,7 +1430,7 @@ Use this callback to change <code>this.prop.checked</code> of the element
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_component.jsx.html#l153"><code>lib&#x2F;component.jsx:153</code></a>
+        <a href="../files/lib_component.jsx.html#l191"><code>lib&#x2F;component.jsx:191</code></a>
         </p>
 
 

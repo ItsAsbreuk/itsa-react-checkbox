@@ -236,7 +236,18 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 33,
+            "line": 34,
+            "description": "Whether to autofocus the Component.",
+            "itemtype": "property",
+            "name": "autoFocus",
+            "type": "Boolean",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 43,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgChecked",
@@ -248,7 +259,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 43,
+            "line": 53,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgButton",
@@ -260,7 +271,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 53,
+            "line": 63,
             "description": "Background-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "bgUnchecked",
@@ -272,7 +283,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 63,
+            "line": 73,
             "description": "Whether the checkbox is checked\n<b>required</b>",
             "itemtype": "property",
             "name": "checked",
@@ -283,7 +294,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 73,
+            "line": 83,
             "description": "The class that should be set on the element",
             "itemtype": "property",
             "name": "className",
@@ -294,7 +305,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 82,
+            "line": 92,
             "description": "Font-color of the `checked`-label",
             "itemtype": "property",
             "name": "colorChecked",
@@ -306,7 +317,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 92,
+            "line": 102,
             "description": "The font-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "colorUnchecked",
@@ -318,7 +329,18 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 102,
+            "line": 112,
+            "description": "Whether the parent-form has been validated.\nThis value is needed to determine if the validate-status should be set.",
+            "itemtype": "property",
+            "name": "formValidated",
+            "type": "Boolean",
+            "since": "0.2.0",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 122,
             "description": "The label when switched `off`",
             "itemtype": "property",
             "name": "labelOff",
@@ -330,7 +352,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 112,
+            "line": 132,
             "description": "The label when switched `on`",
             "itemtype": "property",
             "name": "labelOn",
@@ -342,7 +364,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 122,
+            "line": 142,
             "description": "The callback whenever the checkbox wants to change its value.\nUse this callback to change `this.prop.checked` of the element\n<b>required</b>",
             "itemtype": "property",
             "name": "onChange",
@@ -353,7 +375,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 133,
+            "line": 153,
             "description": "font-size of the element. Best specified in `em`",
             "itemtype": "property",
             "name": "fontSize",
@@ -365,7 +387,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 143,
+            "line": 163,
             "description": "Whether the checkbox should be rendered in a `square`-style instead of rounded",
             "itemtype": "property",
             "name": "square",
@@ -377,7 +399,29 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 153,
+            "line": 173,
+            "description": "The tabindex of the Component.",
+            "itemtype": "property",
+            "name": "type",
+            "type": "Number",
+            "since": "0.1.2",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 182,
+            "description": "Whether the property is validated right.",
+            "itemtype": "property",
+            "name": "validated",
+            "type": "Boolean",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 191,
             "description": "The width of the element: when not set, it will be auto-fitted.\nYou should specify a number, which is used as `em`-width.",
             "itemtype": "property",
             "name": "width",
@@ -388,7 +432,28 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 167,
+            "line": 205,
+            "description": "componentDidMount will call `this.activatePlaces()`;",
+            "itemtype": "method",
+            "name": "componentDidMount",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 217,
+            "description": "Sets the focus on the Component.",
+            "itemtype": "method",
+            "name": "focus",
+            "chainable": 1,
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 229,
             "description": "Returns the initial state.",
             "itemtype": "method",
             "name": "getInitialState",
@@ -401,7 +466,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 181,
+            "line": 243,
             "description": "React render-method --> renderes the Component.",
             "itemtype": "method",
             "name": "render",

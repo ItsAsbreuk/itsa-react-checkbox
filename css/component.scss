@@ -3,6 +3,7 @@ $background-color-checked: #0078E7;
 $color-unchecked: #444;
 $background-color-unchecked: #FFF;
 $background-color-button: #CCC;
+$color-error-border: #FF6A6A;
 $size: 0.9em;
 
 .itsa-checkbox {
@@ -24,6 +25,10 @@ $size: 0.9em;
 
 .itsa-checkbox.bordered {
     border-radius: 1em;
+}
+
+.itsa-checkbox.error {
+    border-color: $color-error-border !important;
 }
 
 .itsa-checkbox:focus {

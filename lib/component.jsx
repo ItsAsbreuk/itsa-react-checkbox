@@ -110,6 +110,16 @@ const Checkbox = React.createClass({
         colorUnchecked: PropTypes.string,
 
         /**
+         * Whether the parent-form has been validated.
+         * This value is needed to determine if the validate-status should be set.
+         *
+         * @property formValidated
+         * @type Boolean
+         * @since 0.2.0
+        */
+        formValidated: PropTypes.bool,
+
+        /**
          * The label when switched `off`
          *
          * @property labelOff
@@ -168,6 +178,15 @@ const Checkbox = React.createClass({
          * @since 0.1.2
         */
         tabIndex: PropTypes.number,
+
+        /**
+         * Whether the property is validated right.
+         *
+         * @property validated
+         * @type Boolean
+         * @since 0.0.1
+        */
+        validated: PropTypes.bool,
 
         /**
          * The width of the element: when not set, it will be auto-fitted.
@@ -237,7 +256,8 @@ const Checkbox = React.createClass({
               props = instance.props, // optimize for uglifyjs which cannot compress object-property names
               labelOn = props.labelOn || DEFAULT_LABEL_ON,
               labelOff = props.labelOff || DEFAULT_LABEL_OFF,
-              tabIndex = props.tabIndex || 1;
+              tabIndex = props.tabIndex || 1,
+              errored = ((props.validated===false) && props.formValidated);
 
         labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION*Math.max(labelOn.length, labelOff.length)) + 1;
         elementWidth = labelWidth + BTN_WIDTH;
@@ -270,6 +290,7 @@ const Checkbox = React.createClass({
         className = MAIN_CLASS;
         props.className && (className+=" "+props.className);
         props.square || (className+=" bordered");
+        errored && (className+=" error");
 
         props.fontSize && (elementStyles.fontSize=props.fontSize);
         props.colorChecked && (labelStylesOn.color=props.colorChecked);

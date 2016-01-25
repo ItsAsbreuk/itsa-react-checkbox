@@ -98,6 +98,7 @@
 */
 
 import React, {PropTypes} from &quot;react&quot;;
+import ReactDom from &quot;react-dom&quot;;
 import checkboxEvents from &quot;./checkbox-events&quot;;
 
 const MAIN_CLASS = &quot;itsa-checkbox&quot;,
@@ -113,6 +114,15 @@ const MAIN_CLASS = &quot;itsa-checkbox&quot;,
 const Checkbox = React.createClass({
 
     propTypes: {
+        /**
+         * Whether to autofocus the Component.
+         *
+         * @property autoFocus
+         * @type Boolean
+         * @since 0.0.1
+        */
+        autoFocus: PropTypes.bool,
+
         /**
          * Background-color of the &#x60;checked&#x60;-label
          *
@@ -183,6 +193,16 @@ const Checkbox = React.createClass({
         colorUnchecked: PropTypes.string,
 
         /**
+         * Whether the parent-form has been validated.
+         * This value is needed to determine if the validate-status should be set.
+         *
+         * @property formValidated
+         * @type Boolean
+         * @since 0.2.0
+        */
+        formValidated: PropTypes.bool,
+
+        /**
          * The label when switched &#x60;off&#x60;
          *
          * @property labelOff
@@ -234,6 +254,24 @@ const Checkbox = React.createClass({
         square: PropTypes.bool,
 
         /**
+         * The tabindex of the Component.
+         *
+         * @property type
+         * @type Number
+         * @since 0.1.2
+        */
+        tabIndex: PropTypes.number,
+
+        /**
+         * Whether the property is validated right.
+         *
+         * @property validated
+         * @type Boolean
+         * @since 0.0.1
+        */
+        validated: PropTypes.bool,
+
+        /**
          * The width of the element: when not set, it will be auto-fitted.
          * You should specify a number, which is used as &#x60;em&#x60;-width.
          *
@@ -246,6 +284,30 @@ const Checkbox = React.createClass({
     },
 
     mixins: [checkboxEvents],
+
+    /**
+     * componentDidMount will call &#x60;this.activatePlaces()&#x60;;
+     *
+     * @method componentDidMount
+     * @since 0.0.1
+     */
+    componentDidMount() {
+        const instance = this;
+        instance._domNode = ReactDom.findDOMNode(instance);
+        instance.props.autoFocus &amp;&amp; instance.focus();
+    },
+
+    /**
+     * Sets the focus on the Component.
+     *
+     * @method focus
+     * @chainable
+     * @since 0.0.1
+     */
+    focus() {
+        this._domNode.focus();
+        return this;
+    },
 
     /**
      * Returns the initial state.
@@ -276,7 +338,9 @@ const Checkbox = React.createClass({
         const instance = this, // optimize for uglifyjs which cannot compress &#x60;this&#x60;
               props = instance.props, // optimize for uglifyjs which cannot compress object-property names
               labelOn = props.labelOn || DEFAULT_LABEL_ON,
-              labelOff = props.labelOff || DEFAULT_LABEL_OFF;
+              labelOff = props.labelOff || DEFAULT_LABEL_OFF,
+              tabIndex = props.tabIndex || 1,
+              errored = ((props.validated===false) &amp;&amp; props.formValidated);
 
         labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION*Math.max(labelOn.length, labelOff.length)) + 1;
         elementWidth = labelWidth + BTN_WIDTH;
@@ -309,6 +373,7 @@ const Checkbox = React.createClass({
         className = MAIN_CLASS;
         props.className &amp;&amp; (className+=&quot; &quot;+props.className);
         props.square || (className+=&quot; bordered&quot;);
+        errored &amp;&amp; (className+=&quot; error&quot;);
 
         props.fontSize &amp;&amp; (elementStyles.fontSize=props.fontSize);
         props.colorChecked &amp;&amp; (labelStylesOn.color=props.colorChecked);
@@ -321,7 +386,7 @@ const Checkbox = React.createClass({
 
         return (
             &lt;div className={className}
-                tabIndex=&quot;1&quot;
+                tabIndex={tabIndex}
                 style={elementStyles}
                 onClick={instance.handleClick}
                 onBlur={instance.handleBlur}
