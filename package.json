@@ -1,6 +1,6 @@
 {
   "name": "itsa-react-checkbox",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "iOS-stylisch checkbox for react",
   "author": [
     {
@@ -61,7 +61,6 @@
   "scripts": {
     "pretest": "eslint  ./**/*.jsx?",
     "test": "mocha 'tests/*.js' --compilers js:babel-core/register",
-    "test2": "istanbul cover $(which _mocha) -- 'tests/*.js' --compilers js:babel-core/register",
     "lint": "eslint ./**/*.jsx?",
     "build": "webpack && yuidoc ./lib -q -c ./yuidoc.json"
   },

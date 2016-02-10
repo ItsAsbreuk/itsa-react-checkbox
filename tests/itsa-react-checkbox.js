@@ -30,10 +30,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
@@ -59,10 +62,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={true}
+              aria-label="I"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
@@ -88,10 +94,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={false}
+              aria-label="OFF"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "5em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-3em", width: "8em"}}>
@@ -117,10 +126,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "12em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-10em", width: "22em"}}>
@@ -146,10 +158,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox test bordered"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
@@ -182,10 +197,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
@@ -211,10 +229,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{fontSize:"5em", width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
@@ -240,10 +261,13 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox"
+              aria-checked={false}
+              aria-label="O"
               onBlur={function noRefCheck() {}}
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              role="checkbox"
               style={{width: "4em"}}
               tabIndex={1}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>

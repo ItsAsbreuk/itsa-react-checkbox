@@ -250,14 +250,16 @@ const Checkbox = React.createClass({
     render() {
 
         let classNameContainer = MAIN_CLASS_PREFIX+"container",
-            elementStyles, constrainStyles, constainerStyles, labelStylesOn, labelStylesOff, labelWidth, elementWidth, constrainWidth, btnStyles, className;
+            elementStyles, constrainStyles, constainerStyles, labelStylesOn, labelStylesOff,
+            labelWidth, elementWidth, constrainWidth, btnStyles, className, ariaLabel;
 
         const instance = this, // optimize for uglifyjs which cannot compress `this`
               props = instance.props, // optimize for uglifyjs which cannot compress object-property names
               labelOn = props.labelOn || DEFAULT_LABEL_ON,
               labelOff = props.labelOff || DEFAULT_LABEL_OFF,
               tabIndex = props.tabIndex || 1,
-              errored = ((props.validated===false) && props.formValidated);
+              errored = ((props.validated===false) && props.formValidated),
+              checked = props.checked;
 
         labelWidth = props.width ? parseFloat(props.width) : Math.round(LABEL_WIDTH_CORRECTION*Math.max(labelOn.length, labelOff.length)) + 1;
         elementWidth = labelWidth + BTN_WIDTH;
@@ -274,7 +276,7 @@ const Checkbox = React.createClass({
             width: constrainWidth+EM
         };
         constainerStyles = {
-            left: instance._mousedown ? instance.state.btnDragPos+"px" : (props.checked ? labelWidth+EM : "0")
+            left: instance._mousedown ? instance.state.btnDragPos+"px" : (checked ? labelWidth+EM : "0")
         };
         labelStylesOn = {
             width: CALC+elementWidth+EM+MINUS_TWO_PX
@@ -283,7 +285,7 @@ const Checkbox = React.createClass({
             width: CALC+elementWidth+EM+MINUS_TWO_PX
         };
         btnStyles = {
-            left: props.checked ? CALC+labelWidth+EM+MINUS_TWO_PX : labelWidth+EM
+            left: checked ? CALC+labelWidth+EM+MINUS_TWO_PX : labelWidth+EM
         };
         instance.state.transitioned || (classNameContainer+=' notrans');
 
@@ -291,6 +293,7 @@ const Checkbox = React.createClass({
         props.className && (className+=" "+props.className);
         props.square || (className+=" bordered");
         errored && (className+=" error");
+        ariaLabel = checked ? labelOn : labelOff;
 
         props.fontSize && (elementStyles.fontSize=props.fontSize);
         props.colorChecked && (labelStylesOn.color=props.colorChecked);
@@ -303,12 +306,15 @@ const Checkbox = React.createClass({
 
         return (
             <div className={className}
-                tabIndex={tabIndex}
-                style={elementStyles}
-                onClick={instance.handleClick}
+                aria-label={ariaLabel}
+                aria-checked={checked}
                 onBlur={instance.handleBlur}
+                onClick={instance.handleClick}
                 onFocus={instance.handleFocus}
-                onKeyPress={instance.handleKeyPress} >
+                onKeyPress={instance.handleKeyPress}
+                role="checkbox"
+                style={elementStyles}
+                tabIndex={tabIndex} >
 
                 <div className={MAIN_CLASS_PREFIX+"constrain"} style={constrainStyles}>
                     <div className={classNameContainer} style={constainerStyles}>
