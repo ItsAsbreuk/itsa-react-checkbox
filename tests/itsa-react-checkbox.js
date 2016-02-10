@@ -30,6 +30,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}
@@ -62,6 +63,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={true}
               aria-label="I"
               onBlur={function noRefCheck() {}}
@@ -94,6 +96,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="OFF"
               onBlur={function noRefCheck() {}}
@@ -126,6 +129,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}
@@ -158,6 +162,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox test bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}
@@ -197,6 +202,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}
@@ -229,6 +235,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox bordered"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}
@@ -261,6 +268,7 @@ describe("React Component", function () {
         const actual = renderer.getRenderOutput();
         const expected = (
             <div className="itsa-checkbox"
+              aria-invalid={false}
               aria-checked={false}
               aria-label="O"
               onBlur={function noRefCheck() {}}

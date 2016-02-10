@@ -306,6 +306,7 @@ const Checkbox = React.createClass({
 
         return (
             <div className={className}
+                aria-invalid={errored}
                 aria-label={ariaLabel}
                 aria-checked={checked}
                 onBlur={instance.handleBlur}
