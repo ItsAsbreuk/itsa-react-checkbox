@@ -62,7 +62,7 @@
     "classitems": [
         {
             "file": "lib/checkbox-events.js",
-            "line": 27,
+            "line": 30,
             "description": "Gets invoked after the Component mounted.\nWill set several refences to internal nodes for quick referal.",
             "itemtype": "method",
             "name": "componentDidMount",
@@ -72,7 +72,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 42,
+            "line": 46,
             "description": "Gets invoked before the Component gets unmounted.\nWill detach some window-eventlisteners.",
             "itemtype": "method",
             "name": "componentWillUnmount",
@@ -82,7 +82,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 53,
+            "line": 57,
             "description": "Detaches some window-eventlisteners.",
             "itemtype": "method",
             "name": "detachDragEvents",
@@ -93,7 +93,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 66,
+            "line": 76,
             "description": "Callback-fn for the onBlur-event.\nsets internal `_focussed`-property false",
             "itemtype": "method",
             "name": "handleBlur",
@@ -103,7 +103,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 77,
+            "line": 87,
             "description": "Callback-fn for the onClick-event.\nWill invoke `this.props.onChange`",
             "itemtype": "method",
             "name": "handleClick",
@@ -113,7 +113,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 92,
+            "line": 102,
             "description": "Callback-fn for the onFocus-event.\nsets internal `_focussed`-property true",
             "itemtype": "method",
             "name": "handleFocus",
@@ -123,7 +123,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 103,
+            "line": 113,
             "description": "Callback-fn for the onKeyPress-event.\nWill invoke `this.props.onChange` when the spacebar was pressed.",
             "itemtype": "method",
             "name": "handleKeyPress",
@@ -140,7 +140,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 117,
+            "line": 127,
             "description": "Callback-fn for the onMouseDown-event.\nPrepares for dragging the button.",
             "itemtype": "method",
             "name": "handleMouseDown",
@@ -157,7 +157,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 138,
+            "line": 148,
             "description": "Callback-fn for the onMouseMove-event.\nHandles dragging of the button.",
             "itemtype": "method",
             "name": "handleMouseMove",
@@ -174,7 +174,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 164,
+            "line": 174,
             "description": "Callback-fn for the onMouseUp-event.\nFinalizes button-dragging.",
             "itemtype": "method",
             "name": "handleMouseUp",
@@ -191,7 +191,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 195,
+            "line": 205,
             "description": "Callback-fn for the onTouchMove-event.\nHandles dragging of the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchMove",
@@ -208,7 +208,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 212,
+            "line": 222,
             "description": "Callback-fn for the onTouchStart-event.\nPrepares for dragging the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchStart",
@@ -225,7 +225,7 @@
         },
         {
             "file": "lib/checkbox-events.js",
-            "line": 229,
+            "line": 239,
             "description": "Sets some window-eventlisteners.",
             "itemtype": "method",
             "name": "setDragEvents",

@@ -101,9 +101,12 @@ import domUtils from &quot;./dom-utils&quot;;
 import ReactDOM from &quot;react-dom&quot;;
 
 const MAIN_CLASS_PREFIX = &quot;itsa-checkbox-&quot;,
+      ON = &quot;on&quot;,
       MOUSE = &quot;mouse&quot;,
       MOUSEUP = MOUSE+&quot;up&quot;,
       MOUSEMOVE = MOUSE+&quot;move&quot;;
+
+let IE8_Events;
 
 const checkboxEvents = {
 
@@ -117,6 +120,7 @@ const checkboxEvents = {
     componentDidMount() {
         const instance = this;
         instance._node = ReactDOM.findDOMNode(this);
+        IE8_Events = !instance._node.addEventListener;
         instance._constrainNode = instance._node.querySelector(&quot;.&quot;+MAIN_CLASS_PREFIX+&quot;constrain&quot;);
         instance._containerNode = instance._node.querySelector(&quot;.&quot;+MAIN_CLASS_PREFIX+&quot;container&quot;);
         instance._btnNode = instance._node.querySelector(&quot;.&quot;+MAIN_CLASS_PREFIX+&quot;btn&quot;);
@@ -141,8 +145,14 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     detachDragEvents() {
-        window.removeEventListener(MOUSEMOVE, this.handleMouseMove, true);
-        window.removeEventListener(MOUSEUP, this.handleMouseUp, true);
+        if (IE8_Events) {
+            window.detachEvent(ON+MOUSEMOVE, this.handleMouseMove);
+            window.detachEvent(ON+MOUSEUP, this.handleMouseUp);
+        }
+        else {
+            window.removeEventListener(MOUSEMOVE, this.handleMouseMove, true);
+            window.removeEventListener(MOUSEUP, this.handleMouseUp, true);
+        }
         return this;
     },
 
@@ -317,8 +327,14 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     setDragEvents() {
-        window.addEventListener(MOUSEMOVE, this.handleMouseMove, true);
-        window.addEventListener(MOUSEUP, this.handleMouseUp, true);
+        if (IE8_Events) {
+            window.attachEvent(ON+MOUSEMOVE, this.handleMouseMove);
+            window.attachEvent(ON+MOUSEUP, this.handleMouseUp);
+        }
+        else {
+            window.addEventListener(MOUSEMOVE, this.handleMouseMove, true);
+            window.addEventListener(MOUSEUP, this.handleMouseUp, true);
+        }
         return this;
     }
 
