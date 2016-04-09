@@ -1,6 +1,6 @@
 {
   "name": "itsa-react-checkbox",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "iOS-stylisch checkbox for react",
   "author": [
     {
@@ -32,6 +32,7 @@
     "lib": "./lib"
   },
   "dependencies": {
+    "itsa-dom": "0.0.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
   },

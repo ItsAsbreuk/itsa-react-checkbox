@@ -97,7 +97,7 @@
  * @since 2.0.0
 */
 
-import domUtils from &quot;./dom-utils&quot;;
+import domUtils from &quot;itsa-dom&quot;;
 import ReactDOM from &quot;react-dom&quot;;
 
 const MAIN_CLASS_PREFIX = &quot;itsa-checkbox-&quot;,
@@ -219,7 +219,7 @@ const checkboxEvents = {
         const instance = this;
         if (e.buttons===1) {
             instance._mousedown = true;
-            instance._containerLeft = domUtils.getNodeLeft(instance._containerNode) - domUtils.getNodeLeft(instance._constrainNode);
+            instance._containerLeft = instance._containerNode.itsa_left - instance._constrainNode.itsa_left;
             instance._mouseLeft = e.clientX;
             instance.setState({
                 btnDragPos: instance._containerLeft
@@ -270,8 +270,8 @@ const checkboxEvents = {
         // check if the position is beyond the &quot;state-change&quot;
         // if so, then switch the position
         if (instance.props.onChange) {
-            elementLeft = domUtils.getNodeLeft(instance._node);
-            btnLeft = domUtils.getNodeLeft(instance._btnNode);
+            elementLeft = instance._node.itsa_left;
+            btnLeft = instance._btnNode.itsa_left;
             elementHalfWidth = instance._node.offsetWidth/2;
             btnHalfWidth = instance._btnNode.offsetWidth/2;
             btnInsideLeftArea = (btnLeft+btnHalfWidth) &lt; (elementLeft+elementHalfWidth);
@@ -312,7 +312,7 @@ const checkboxEvents = {
      */
     handleTouchStart(e) {
         const instance = this;
-        instance._containerLeft = domUtils.getNodeLeft(instance._containerNode) - domUtils.getNodeLeft(instance._constrainNode);
+        instance._containerLeft = instance._containerNode.itsa_left - instance._constrainNode.itsa_left;
         instance._mouseLeft = e.touches.clientX;
         instance.setState({
             btnDragPos: instance._containerLeft
