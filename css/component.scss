@@ -2,6 +2,12 @@ $color-checked: #FFF;
 $background-color-checked: #0078E7;
 $color-unchecked: #444;
 $background-color-unchecked: #FFF;
+$background-color-disabled-checked: #8BB3D8;
+$color-disabled-checked: #EAEDED;
+$color-disabled-unchecked: #AAA;
+$background-color-disabled-unchecked: #EAEDED;
+$background-color-btn: #FFF;
+$background-color-disabled-btn: #F9F9F9;
 $background-color-button: #CCC;
 $color-error-border: #FF6A6A;
 $size: 0.9em;
@@ -42,8 +48,8 @@ $size: 0.9em;
     display: block;
 }
 
-.itsa-checkbox:focus .itsa-checkbox-on,
-.itsa-checkbox:focus .itsa-checkbox-off {
+.itsa-checkbox:focus:not(.disabled):not(.readonly) .itsa-checkbox-on,
+.itsa-checkbox:focus:not(.disabled):not(.readonly) .itsa-checkbox-off {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.20)));
     background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.20));
@@ -53,7 +59,7 @@ $size: 0.9em;
     box-shadow: 0 0 0 2px rgba(0,0,0, 0.4) inset;
 }
 
-.itsa-checkbox:focus .itsa-checkbox-btn {
+.itsa-checkbox:focus:not(.disabled):not(.readonly) .itsa-checkbox-btn {
     border: solid 1px #888;
     box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.06);
 }
@@ -84,6 +90,11 @@ $size: 0.9em;
     -ms-transition: left 0.25s;
     -o-transition: left 0.25s;
     transition: left 0.25s;
+}
+
+.itsa-checkbox.disabled .itsa-checkbox-container,
+.itsa-checkbox.readonly .itsa-checkbox-container {
+    cursor: default;
 }
 
 .itsa-checkbox .itsa-checkbox-container.notrans {
@@ -126,6 +137,16 @@ $size: 0.9em;
     margin-left: calc(-2em + 2px);
 }
 
+.itsa-checkbox.disabled .itsa-checkbox-on {
+    background-color: $background-color-disabled-checked;
+    color: $color-disabled-checked;
+}
+
+.itsa-checkbox.disabled .itsa-checkbox-off {
+    background-color: $background-color-disabled-unchecked;
+    color: $color-disabled-unchecked;
+}
+
 .itsa-checkbox.bordered .itsa-checkbox-on {
     padding-right: 1.5em;
 }
@@ -138,10 +159,14 @@ $size: 0.9em;
     position: relative;
     z-index: 1;
     box-shadow: inset 0 0.17em 0.5em rgba(0, 0, 0, 0.18);
-    background-color: #fff;
+    background-color: $background-color-btn;
     border: solid 1px $background-color-button;
     width: 2em;
     height: 100%;
+}
+
+.itsa-checkbox.disabled .itsa-checkbox-btn {
+    background-color: $background-color-disabled-btn;
 }
 
 .itsa-checkbox.bordered .itsa-checkbox-btn {

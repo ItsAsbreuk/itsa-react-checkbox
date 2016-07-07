@@ -29,7 +29,7 @@ describe("React Component", function () {
         renderer.render(<Component checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -39,9 +39,75 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
+                  <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
+                  <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
+                  <div
+                    className="itsa-checkbox-btn"
+                    onMouseDown={function noRefCheck() {}}
+                    onTouchEnd={function noRefCheck() {}}
+                    onTouchMove={function noRefCheck() {}}
+                    onTouchStart={function noRefCheck() {}}
+                    style={{left: "2em"}} />
+                </div>
+              </div>
+            </div>
+        );
+        expect(actual).to.equalJSX(expected);
+    });
+
+    it("Rendering disabled component", function () {
+        renderer.render(<Component checked={false} disabled={true} onChange={NOOP} />);
+        const actual = renderer.getRenderOutput();
+        const expected = (
+            <div className="itsa-checkbox itsa-formelement bordered disabled"
+              aria-invalid={false}
+              aria-checked={false}
+              aria-label="O"
+              onBlur={function noRefCheck() {}}
+              onClick={function noRefCheck() {}}
+              onFocus={function noRefCheck() {}}
+              onKeyPress={function noRefCheck() {}}
+              role="checkbox"
+              style={{width: "4em"}}
+              tabIndex={undefined}>
+              <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
+                  <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
+                  <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
+                  <div
+                    className="itsa-checkbox-btn"
+                    onMouseDown={function noRefCheck() {}}
+                    onTouchEnd={function noRefCheck() {}}
+                    onTouchMove={function noRefCheck() {}}
+                    onTouchStart={function noRefCheck() {}}
+                    style={{left: "2em"}} />
+                </div>
+              </div>
+            </div>
+        );
+        expect(actual).to.equalJSX(expected);
+    });
+
+    it("Rendering readonly component", function () {
+        renderer.render(<Component checked={false} readOnly={true} onChange={NOOP} />);
+        const actual = renderer.getRenderOutput();
+        const expected = (
+            <div className="itsa-checkbox itsa-formelement bordered readonly"
+              aria-invalid={false}
+              aria-checked={false}
+              aria-label="O"
+              onBlur={function noRefCheck() {}}
+              onClick={function noRefCheck() {}}
+              onFocus={function noRefCheck() {}}
+              onKeyPress={function noRefCheck() {}}
+              role="checkbox"
+              style={{width: "4em"}}
+              tabIndex={undefined}>
+              <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
                   <div
@@ -62,7 +128,7 @@ describe("React Component", function () {
         renderer.render(<Component checked={true} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={true}
               aria-label="I"
@@ -72,7 +138,7 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
                 <div className="itsa-checkbox-container" style={{left: "2em"}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
@@ -95,7 +161,7 @@ describe("React Component", function () {
         renderer.render(<Component labelOn="ON" labelOff="OFF" checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="OFF"
@@ -105,9 +171,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "5em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-3em", width: "8em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(5em - 2px)"}}>ON</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(5em - 2px)"}}>OFF</div>
                   <div
@@ -128,7 +194,7 @@ describe("React Component", function () {
         renderer.render(<Component width={10} checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -138,9 +204,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "12em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-10em", width: "22em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(12em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(12em - 2px)"}}>O</div>
                   <div
@@ -161,7 +227,7 @@ describe("React Component", function () {
         renderer.render(<Component className="test" checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox test bordered"
+            <div className="itsa-checkbox itsa-formelement test bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -171,9 +237,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
                   <div
@@ -201,7 +267,7 @@ describe("React Component", function () {
             onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -211,9 +277,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{backgroundColor: "#111", color: "#444", width: "calc(4em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{backgroundColor: "#333", color: "#555", width: "calc(4em - 2px)"}}>O</div>
                   <div
@@ -234,7 +300,7 @@ describe("React Component", function () {
         renderer.render(<Component fontSize="5em" checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox bordered"
+            <div className="itsa-checkbox itsa-formelement bordered"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -244,9 +310,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{fontSize:"5em", width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
                   <div
@@ -267,7 +333,7 @@ describe("React Component", function () {
         renderer.render(<Component square={true} checked={false} onChange={NOOP} />);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div className="itsa-checkbox"
+            <div className="itsa-checkbox itsa-formelement"
               aria-invalid={false}
               aria-checked={false}
               aria-label="O"
@@ -277,9 +343,9 @@ describe("React Component", function () {
               onKeyPress={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
-              tabIndex={1}>
+              tabIndex={undefined}>
               <div className="itsa-checkbox-constrain" style={{left: "-2em", width: "6em"}}>
-                <div className="itsa-checkbox-container" style={{left: "0"}}>
+                <div className="itsa-checkbox-container" style={{left: 0}}>
                   <div className="itsa-checkbox-on" style={{width: "calc(4em - 2px)"}}>I</div>
                   <div className="itsa-checkbox-off" style={{width: "calc(4em - 2px)"}}>O</div>
                   <div

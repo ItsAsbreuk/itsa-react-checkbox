@@ -5,7 +5,9 @@ const React = require("react"),
       Component = require("./lib/component-styled.jsx");
 
 let props = {
-    checked: true
+    checked: true,
+    disabled: true,
+    readOnly: true
 };
 
 let props2 = {

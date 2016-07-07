@@ -97,19 +97,20 @@
  * @since 2.0.0
 */
 
-import React, {PropTypes} from &quot;react&quot;;
-import ReactDom from &quot;react-dom&quot;;
-import checkboxEvents from &quot;./checkbox-events&quot;;
-
-const MAIN_CLASS = &quot;itsa-checkbox&quot;,
-      MAIN_CLASS_PREFIX = MAIN_CLASS+&quot;-&quot;,
-      BTN_WIDTH = 2, // em
-      LABEL_WIDTH_CORRECTION = 0.8,
-      DEFAULT_LABEL_ON = &quot;I&quot;,
-      DEFAULT_LABEL_OFF = &quot;O&quot;,
-      EM = &quot;em&quot;,
-      CALC = &quot;calc(&quot;,
-      MINUS_TWO_PX = &quot; - 2px)&quot;;
+const React = require(&quot;react&quot;),
+    PropTypes = React.PropTypes,
+    ReactDom = require(&quot;react-dom&quot;),
+    later = require(&quot;itsa-utils&quot;).later,
+    checkboxEvents = require(&quot;./checkbox-events&quot;),
+    MAIN_CLASS = &quot;itsa-checkbox&quot;,
+    MAIN_CLASS_PREFIX = MAIN_CLASS+&quot;-&quot;,
+    BTN_WIDTH = 2, // em
+    LABEL_WIDTH_CORRECTION = 0.8,
+    DEFAULT_LABEL_ON = &quot;I&quot;,
+    DEFAULT_LABEL_OFF = &quot;O&quot;,
+    EM = &quot;em&quot;,
+    CALC = &quot;calc(&quot;,
+    MINUS_TWO_PX = &quot; - 2px)&quot;;
 
 const Checkbox = React.createClass({
 
@@ -193,6 +194,16 @@ const Checkbox = React.createClass({
         colorUnchecked: PropTypes.string,
 
         /**
+         * Whether the checkbox is disabled
+         *
+         * @property disabled
+         * @type Boolean
+         * @default false
+         * @since 15.2.0
+        */
+        disabled: PropTypes.bool,
+
+        /**
          * Whether the parent-form has been validated.
          * This value is needed to determine if the validate-status should be set.
          *
@@ -242,6 +253,16 @@ const Checkbox = React.createClass({
          * @since 0.0.1
         */
         fontSize: PropTypes.string,
+
+        /**
+         * Whether the checkbox is readonly
+         *
+         * @property readOnly
+         * @type Boolean
+         * @default false
+         * @since 15.2.0
+        */
+        readOnly: PropTypes.bool,
 
         /**
          * Whether the checkbox should be rendered in a &#x60;square&#x60;-style instead of rounded
@@ -294,7 +315,19 @@ const Checkbox = React.createClass({
     componentDidMount() {
         const instance = this;
         instance._domNode = ReactDom.findDOMNode(instance);
-        instance.props.autoFocus &amp;&amp; instance.focus();
+        if (instance.props.autoFocus) {
+            instance._focusLater = later(() =&gt; instance.focus(), 50);
+        }
+    },
+
+    /**
+     * componentWilUnmount does some cleanup.
+     *
+     * @method componentWillUnmount
+     * @since 0.0.1
+     */
+    componentWillUnmount() {
+        this._focusLater &amp;&amp; this._focusLater.cancel();
     },
 
     /**
@@ -359,7 +392,7 @@ const Checkbox = React.createClass({
             width: constrainWidth+EM
         };
         constainerStyles = {
-            left: instance._mousedown ? instance.state.btnDragPos+&quot;px&quot; : (checked ? labelWidth+EM : &quot;0&quot;)
+            left: instance._mousedown ? instance.state.btnDragPos+&quot;px&quot; : (checked ? labelWidth+EM : 0)
         };
         labelStylesOn = {
             width: CALC+elementWidth+EM+MINUS_TWO_PX
@@ -370,12 +403,14 @@ const Checkbox = React.createClass({
         btnStyles = {
             left: checked ? CALC+labelWidth+EM+MINUS_TWO_PX : labelWidth+EM
         };
-        instance.state.transitioned || (classNameContainer+=&#x27; notrans&#x27;);
+        instance.state.transitioned || (classNameContainer+=&quot; notrans&quot;);
 
         className = MAIN_CLASS;
         props.className &amp;&amp; (className+=&quot; &quot;+props.className);
         props.square || (className+=&quot; bordered&quot;);
         errored &amp;&amp; (className+=&quot; error&quot;);
+        props.disabled &amp;&amp; (className+=&quot; disabled&quot;);
+        props.readOnly &amp;&amp; (className+=&quot; readonly&quot;);
         ariaLabel = checked ? labelOn : labelOff;
 
         props.fontSize &amp;&amp; (elementStyles.fontSize=props.fontSize);

@@ -14,19 +14,23 @@
  * @since 2.0.0
 */
 
-import React, {PropTypes} from "react";
-import ReactDom from "react-dom";
-import checkboxEvents from "./checkbox-events";
+require("itsa-jsext/lib/object");
 
-const MAIN_CLASS = "itsa-checkbox",
-      MAIN_CLASS_PREFIX = MAIN_CLASS+"-",
-      BTN_WIDTH = 2, // em
-      LABEL_WIDTH_CORRECTION = 0.8,
-      DEFAULT_LABEL_ON = "I",
-      DEFAULT_LABEL_OFF = "O",
-      EM = "em",
-      CALC = "calc(",
-      MINUS_TWO_PX = " - 2px)";
+const React = require("react"),
+    PropTypes = React.PropTypes,
+    ReactDom = require("react-dom"),
+    later = require("itsa-utils").later,
+    checkboxEvents = require("./checkbox-events"),
+    MAIN_CLASS = "itsa-checkbox",
+    MAIN_CLASS_PREFIX = MAIN_CLASS+"-",
+    FORM_ELEMENT_CLASS_SPACES = " itsa-formelement",
+    BTN_WIDTH = 2, // em
+    LABEL_WIDTH_CORRECTION = 0.8,
+    DEFAULT_LABEL_ON = "I",
+    DEFAULT_LABEL_OFF = "O",
+    EM = "em",
+    CALC = "calc(",
+    MINUS_TWO_PX = " - 2px)";
 
 const Checkbox = React.createClass({
 
@@ -110,6 +114,26 @@ const Checkbox = React.createClass({
         colorUnchecked: PropTypes.string,
 
         /**
+         * Whether the checkbox is disabled
+         *
+         * @property disabled
+         * @type Boolean
+         * @default false
+         * @since 15.2.0
+        */
+        disabled: PropTypes.bool,
+
+        /**
+         * font-size of the element. Best specified in `em`
+         *
+         * @property fontSize
+         * @type String
+         * @default "0.9em"
+         * @since 0.0.1
+        */
+        fontSize: PropTypes.string,
+
+        /**
          * Whether the parent-form has been validated.
          * This value is needed to determine if the validate-status should be set.
          *
@@ -151,14 +175,14 @@ const Checkbox = React.createClass({
         onChange: PropTypes.func.isRequired,
 
         /**
-         * font-size of the element. Best specified in `em`
+         * Whether the checkbox is readonly
          *
-         * @property fontSize
-         * @type String
-         * @default "0.9em"
-         * @since 0.0.1
+         * @property readOnly
+         * @type Boolean
+         * @default false
+         * @since 15.2.0
         */
-        fontSize: PropTypes.string,
+        readOnly: PropTypes.bool,
 
         /**
          * Whether the checkbox should be rendered in a `square`-style instead of rounded
@@ -169,6 +193,15 @@ const Checkbox = React.createClass({
          * @since 0.0.1
         */
         square: PropTypes.bool,
+
+        /**
+         * Inline style
+         *
+         * @property style
+         * @type object
+         * @since 0.0.1
+        */
+        style: PropTypes.object,
 
         /**
          * The tabindex of the Component.
@@ -211,19 +244,45 @@ const Checkbox = React.createClass({
     componentDidMount() {
         const instance = this;
         instance._domNode = ReactDom.findDOMNode(instance);
-        instance.props.autoFocus && instance.focus();
+        if (instance.props.autoFocus) {
+            instance._focusLater = later(() => instance.focus(), 50);
+        }
+    },
+
+    /**
+     * componentWilUnmount does some cleanup.
+     *
+     * @method componentWillUnmount
+     * @since 0.0.1
+     */
+    componentWillUnmount() {
+        this._focusLater && this._focusLater.cancel();
     },
 
     /**
      * Sets the focus on the Component.
      *
      * @method focus
+     * @param [transitionTime] {Number} transition-time to focus the element into the view
      * @chainable
      * @since 0.0.1
      */
-    focus() {
-        this._domNode.focus();
+    focus(transitionTime) {
+        this._domNode.itsa_focus(null, null, transitionTime);
         return this;
+    },
+
+    /**
+     * Returns the default props.
+     *
+     * @method getDefaultProps
+     * @return Object
+     * @since 0.0.1
+     */
+    getDefaultProps() {
+        return {
+            style: {}
+        };
     },
 
     /**
@@ -257,7 +316,7 @@ const Checkbox = React.createClass({
               props = instance.props, // optimize for uglifyjs which cannot compress object-property names
               labelOn = props.labelOn || DEFAULT_LABEL_ON,
               labelOff = props.labelOff || DEFAULT_LABEL_OFF,
-              tabIndex = props.tabIndex || 1,
+              tabIndex = props.tabIndex,
               errored = ((props.validated===false) && props.formValidated),
               checked = props.checked;
 
@@ -276,7 +335,7 @@ const Checkbox = React.createClass({
             width: constrainWidth+EM
         };
         constainerStyles = {
-            left: instance._mousedown ? instance.state.btnDragPos+"px" : (checked ? labelWidth+EM : "0")
+            left: instance._mousedown ? instance.state.btnDragPos+"px" : (checked ? labelWidth+EM : 0)
         };
         labelStylesOn = {
             width: CALC+elementWidth+EM+MINUS_TWO_PX
@@ -287,12 +346,14 @@ const Checkbox = React.createClass({
         btnStyles = {
             left: checked ? CALC+labelWidth+EM+MINUS_TWO_PX : labelWidth+EM
         };
-        instance.state.transitioned || (classNameContainer+=' notrans');
+        instance.state.transitioned || (classNameContainer+=" notrans");
 
-        className = MAIN_CLASS;
+        className = MAIN_CLASS+FORM_ELEMENT_CLASS_SPACES;
         props.className && (className+=" "+props.className);
         props.square || (className+=" bordered");
         errored && (className+=" error");
+        props.disabled && (className+=" disabled");
+        props.readOnly && (className+=" readonly");
         ariaLabel = checked ? labelOn : labelOff;
 
         props.fontSize && (elementStyles.fontSize=props.fontSize);
@@ -301,6 +362,8 @@ const Checkbox = React.createClass({
         props.colorUnchecked && (labelStylesOff.color=props.colorUnchecked);
         props.bgUnchecked && (labelStylesOff.backgroundColor=props.bgUnchecked);
         props.bgButton && (btnStyles.backgroundColor=props.bgButton);
+        elementStyles.itsa_merge(props.style, {force: "full"});
+
         // ======================================================================================================
         // ======================================================================================================
 

@@ -97,14 +97,14 @@
  * @since 2.0.0
 */
 
-import domUtils from &quot;itsa-dom&quot;;
-import ReactDOM from &quot;react-dom&quot;;
+require(&quot;itsa-dom&quot;);
 
-const MAIN_CLASS_PREFIX = &quot;itsa-checkbox-&quot;,
-      ON = &quot;on&quot;,
-      MOUSE = &quot;mouse&quot;,
-      MOUSEUP = MOUSE+&quot;up&quot;,
-      MOUSEMOVE = MOUSE+&quot;move&quot;;
+const ReactDOM = require(&quot;react-dom&quot;),
+    MAIN_CLASS_PREFIX = &quot;itsa-checkbox-&quot;,
+    ON = &quot;on&quot;,
+    MOUSE = &quot;mouse&quot;,
+    MOUSEUP = MOUSE+&quot;up&quot;,
+    MOUSEMOVE = MOUSE+&quot;move&quot;;
 
 let IE8_Events;
 
@@ -175,11 +175,14 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     handleClick() {
-        const instance = this;
-        if (!instance._wasDragged &amp;&amp; instance.props.onChange) {
-            instance.props.onChange();
+        const instance = this,
+            props = instance.props;
+        if (!props.disabled &amp;&amp; !props.readOnly) {
+            if (!instance._wasDragged &amp;&amp; props.onChange) {
+                props.onChange();
+            }
+            instance._wasDragged = false;
         }
-        instance._wasDragged = false;
     },
 
     /**
@@ -202,8 +205,12 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     handleKeyPress(e) {
-        if (this._focussed &amp;&amp; (e.charCode===32)) {
-            this.handleClick();
+        const instance = this,
+            props = instance.props;
+        if (!props.disabled &amp;&amp; !props.readOnly) {
+            if (instance._focussed &amp;&amp; (e.charCode===32)) {
+                instance.handleClick();
+            }
         }
     },
 
@@ -216,8 +223,9 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     handleMouseDown(e) {
-        const instance = this;
-        if (e.buttons===1) {
+        const instance = this,
+            props = instance.props;
+        if ((e.buttons===1) &amp;&amp; !props.disabled &amp;&amp; !props.readOnly) {
             instance._mousedown = true;
             instance._containerLeft = instance._containerNode.itsa_left - instance._constrainNode.itsa_left;
             instance._mouseLeft = e.clientX;
@@ -238,8 +246,9 @@ const checkboxEvents = {
      */
     handleMouseMove(e) {
         let newPos;
-        const instance = this;
-        if (instance._mousedown) {
+        const instance = this,
+            props = instance.props;
+        if (instance._mousedown &amp;&amp; !props.disabled &amp;&amp; !props.readOnly) {
             instance._wasDragged = true;
             if (e.buttons===1) {
                 newPos = instance._containerLeft + e.clientX - instance._mouseLeft;
@@ -264,19 +273,20 @@ const checkboxEvents = {
      */
     handleMouseUp(noDetach) {
         let elementLeft, btnLeft, elementHalfWidth, btnHalfWidth, btnInsideLeftArea, stateChanged;
-        const instance = this;
+        const instance = this,
+            props = instance.props;
         (noDetach===true) || instance.detachDragEvents();
         instance._mousedown = false;
         // check if the position is beyond the &quot;state-change&quot;
         // if so, then switch the position
-        if (instance.props.onChange) {
+        if (props.onChange) {
             elementLeft = instance._node.itsa_left;
             btnLeft = instance._btnNode.itsa_left;
             elementHalfWidth = instance._node.offsetWidth/2;
             btnHalfWidth = instance._btnNode.offsetWidth/2;
             btnInsideLeftArea = (btnLeft+btnHalfWidth) &lt; (elementLeft+elementHalfWidth);
-            stateChanged = (instance.props.checked &amp;&amp; btnInsideLeftArea) || (!instance.props.checked &amp;&amp; !btnInsideLeftArea)
-            stateChanged &amp;&amp; instance.props.onChange();
+            stateChanged = (props.checked &amp;&amp; btnInsideLeftArea) || (!props.checked &amp;&amp; !btnInsideLeftArea);
+            stateChanged &amp;&amp; props.onChange();
         }
         // reset state:
         instance.setState({
@@ -295,11 +305,14 @@ const checkboxEvents = {
      */
     handleTouchMove(e) {
         const instance = this,
-              newPos = instance._containerLeft + e.touches.clientX - instance._mouseLeft;
-        instance.setState({
-            btnDragPos: Math.max(0, Math.min(newPos, (instance._constrainNode.offsetWidth-instance._node.offsetWidth))),
-            transitioned: false
-        });
+            props = instance.props,
+            newPos = instance._containerLeft + e.touches.clientX - instance._mouseLeft;
+       if (!props.disabled &amp;&amp; !props.readOnly) {
+            instance.setState({
+                btnDragPos: Math.max(0, Math.min(newPos, (instance._constrainNode.offsetWidth-instance._node.offsetWidth))),
+                transitioned: false
+            });
+        }
     },
 
     /**
@@ -311,12 +324,15 @@ const checkboxEvents = {
      * @since 0.0.1
      */
     handleTouchStart(e) {
-        const instance = this;
-        instance._containerLeft = instance._containerNode.itsa_left - instance._constrainNode.itsa_left;
-        instance._mouseLeft = e.touches.clientX;
-        instance.setState({
-            btnDragPos: instance._containerLeft
-        });
+        const instance = this,
+            props = instance.props;
+        if (!props.disabled &amp;&amp; !props.readOnly) {
+            instance._containerLeft = instance._containerNode.itsa_left - instance._constrainNode.itsa_left;
+            instance._mouseLeft = e.touches.clientX;
+            instance.setState({
+                btnDragPos: instance._containerLeft
+            });
+        }
     },
 
     /**
@@ -340,7 +356,7 @@ const checkboxEvents = {
 
 };
 
-export default checkboxEvents;
+module.exports = checkboxEvents;
 
     </pre>
 </div>
