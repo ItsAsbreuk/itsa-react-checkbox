@@ -15,6 +15,7 @@
 */
 
 require("itsa-jsext/lib/object");
+require("itsa-dom");
 
 const React = require("react"),
     PropTypes = React.PropTypes,
@@ -268,8 +269,9 @@ const Checkbox = React.createClass({
      * @since 0.0.1
      */
     focus(transitionTime) {
-        this._domNode.itsa_focus(null, null, transitionTime);
-        return this;
+        var instance = this;
+        instance._domNode.itsa_focus && instance._domNode.itsa_focus(null, null, transitionTime);
+        return instance;
     },
 
     /**
