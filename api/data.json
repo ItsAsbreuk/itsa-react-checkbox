@@ -6,18 +6,11 @@
         "version": "0.0.1"
     },
     "files": {
-        "lib/checkbox-events.js": {
-            "name": "lib/checkbox-events.js",
+        "lib/component.jsx": {
+            "name": "lib/component.jsx",
             "modules": {
                 "itsa-react-checkbox": 1
             },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "lib/component.jsx": {
-            "name": "lib/component.jsx",
-            "modules": {},
             "classes": {
                 "Checkbox": 1
             },
@@ -61,9 +54,9 @@
     "elements": {},
     "classitems": [
         {
-            "file": "lib/checkbox-events.js",
-            "line": 30,
-            "description": "Gets invoked after the Component mounted.\nWill set several refences to internal nodes for quick referal.",
+            "file": "lib/component.jsx",
+            "line": 64,
+            "description": "componentDidMount will call `this.activatePlaces()`;",
             "itemtype": "method",
             "name": "componentDidMount",
             "since": "0.0.1",
@@ -71,9 +64,9 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 46,
-            "description": "Gets invoked before the Component gets unmounted.\nWill detach some window-eventlisteners.",
+            "file": "lib/component.jsx",
+            "line": 82,
+            "description": "componentWilUnmount does some cleanup.",
             "itemtype": "method",
             "name": "componentWillUnmount",
             "since": "0.0.1",
@@ -81,8 +74,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 57,
+            "file": "lib/component.jsx",
+            "line": 93,
             "description": "Detaches some window-eventlisteners.",
             "itemtype": "method",
             "name": "detachDragEvents",
@@ -92,8 +85,27 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 76,
+            "file": "lib/component.jsx",
+            "line": 112,
+            "description": "Sets the focus on the Component.",
+            "itemtype": "method",
+            "name": "focus",
+            "params": [
+                {
+                    "name": "transitionTime",
+                    "description": "transition-time to focus the element into the view",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "chainable": 1,
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 126,
             "description": "Callback-fn for the onBlur-event.\nsets internal `_focussed`-property false",
             "itemtype": "method",
             "name": "handleBlur",
@@ -102,8 +114,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 87,
+            "file": "lib/component.jsx",
+            "line": 137,
             "description": "Callback-fn for the onClick-event.\nWill invoke `this.props.onChange`",
             "itemtype": "method",
             "name": "handleClick",
@@ -112,8 +124,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 105,
+            "file": "lib/component.jsx",
+            "line": 157,
             "description": "Callback-fn for the onFocus-event.\nsets internal `_focussed`-property true",
             "itemtype": "method",
             "name": "handleFocus",
@@ -122,8 +134,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 116,
+            "file": "lib/component.jsx",
+            "line": 168,
             "description": "Callback-fn for the onKeyPress-event.\nWill invoke `this.props.onChange` when the spacebar was pressed.",
             "itemtype": "method",
             "name": "handleKeyPress",
@@ -139,8 +151,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 134,
+            "file": "lib/component.jsx",
+            "line": 188,
             "description": "Callback-fn for the onMouseDown-event.\nPrepares for dragging the button.",
             "itemtype": "method",
             "name": "handleMouseDown",
@@ -156,8 +168,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 156,
+            "file": "lib/component.jsx",
+            "line": 210,
             "description": "Callback-fn for the onMouseMove-event.\nHandles dragging of the button.",
             "itemtype": "method",
             "name": "handleMouseMove",
@@ -173,8 +185,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 183,
+            "file": "lib/component.jsx",
+            "line": 237,
             "description": "Callback-fn for the onMouseUp-event.\nFinalizes button-dragging.",
             "itemtype": "method",
             "name": "handleMouseUp",
@@ -190,8 +202,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 215,
+            "file": "lib/component.jsx",
+            "line": 269,
             "description": "Callback-fn for the onTouchMove-event.\nHandles dragging of the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchMove",
@@ -207,8 +219,8 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 235,
+            "file": "lib/component.jsx",
+            "line": 289,
             "description": "Callback-fn for the onTouchStart-event.\nPrepares for dragging the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchStart",
@@ -224,8 +236,21 @@
             "module": "itsa-react-checkbox"
         },
         {
-            "file": "lib/checkbox-events.js",
-            "line": 255,
+            "file": "lib/component.jsx",
+            "line": 309,
+            "description": "React render-method --> renderes the Component.",
+            "itemtype": "method",
+            "name": "render",
+            "return": {
+                "description": "ReactComponent"
+            },
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 406,
             "description": "Sets some window-eventlisteners.",
             "itemtype": "method",
             "name": "setDragEvents",
@@ -236,7 +261,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 35,
+            "line": 432,
             "description": "Whether to autofocus the Component.",
             "itemtype": "property",
             "name": "autoFocus",
@@ -247,7 +272,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 44,
+            "line": 441,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgChecked",
@@ -259,7 +284,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 54,
+            "line": 451,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgButton",
@@ -271,7 +296,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 64,
+            "line": 461,
             "description": "Background-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "bgUnchecked",
@@ -283,7 +308,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 74,
+            "line": 471,
             "description": "Whether the checkbox is checked\n<b>required</b>",
             "itemtype": "property",
             "name": "checked",
@@ -294,7 +319,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 84,
+            "line": 481,
             "description": "The class that should be set on the element",
             "itemtype": "property",
             "name": "className",
@@ -305,7 +330,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 93,
+            "line": 490,
             "description": "Font-color of the `checked`-label",
             "itemtype": "property",
             "name": "colorChecked",
@@ -317,7 +342,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 103,
+            "line": 500,
             "description": "The font-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "colorUnchecked",
@@ -329,7 +354,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 113,
+            "line": 510,
             "description": "Whether the checkbox is disabled",
             "itemtype": "property",
             "name": "disabled",
@@ -341,53 +366,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 123,
-            "description": "Whether the parent-form has been validated.\nThis value is needed to determine if the validate-status should be set.",
-            "itemtype": "property",
-            "name": "formValidated",
-            "type": "Boolean",
-            "since": "0.2.0",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 133,
-            "description": "The label when switched `off`",
-            "itemtype": "property",
-            "name": "labelOff",
-            "type": "String",
-            "default": "\"O\"",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 143,
-            "description": "The label when switched `on`",
-            "itemtype": "property",
-            "name": "labelOn",
-            "type": "String",
-            "default": "\"I\"",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 153,
-            "description": "The callback whenever the checkbox wants to change its value.\nUse this callback to change `this.prop.checked` of the element\n<b>required</b>",
-            "itemtype": "property",
-            "name": "onChange",
-            "type": "Function",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 164,
+            "line": 520,
             "description": "font-size of the element. Best specified in `em`",
             "itemtype": "property",
             "name": "fontSize",
@@ -399,7 +378,64 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 174,
+            "line": 530,
+            "description": "Whether the parent-form has been validated.\nThis value is needed to determine if the validate-status should be set.",
+            "itemtype": "property",
+            "name": "formValidated",
+            "type": "Boolean",
+            "since": "0.2.0",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 540,
+            "description": "The label when switched `off`",
+            "itemtype": "property",
+            "name": "labelOff",
+            "type": "String",
+            "default": "\"O\"",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 550,
+            "description": "The label when switched `on`",
+            "itemtype": "property",
+            "name": "labelOn",
+            "type": "String",
+            "default": "\"I\"",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 560,
+            "description": "The callback whenever the checkbox wants to change its value.\nUse this callback to change `this.prop.checked` of the element\n<b>required</b>",
+            "itemtype": "property",
+            "name": "onChange",
+            "type": "Function",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 571,
+            "description": "The callback whenever the checkbox is clicked.\nDoes not effect its behavious, but can be used to stop propagation",
+            "itemtype": "property",
+            "name": "onClick",
+            "type": "Function",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 581,
             "description": "Whether the checkbox is readonly",
             "itemtype": "property",
             "name": "readOnly",
@@ -411,7 +447,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 184,
+            "line": 591,
             "description": "Whether the checkbox should be rendered in a `square`-style instead of rounded",
             "itemtype": "property",
             "name": "square",
@@ -423,7 +459,18 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 194,
+            "line": 601,
+            "description": "Inline style",
+            "itemtype": "property",
+            "name": "style",
+            "type": "object",
+            "since": "0.0.1",
+            "class": "Checkbox",
+            "module": "itsa-react-checkbox"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 610,
             "description": "The tabindex of the Component.",
             "itemtype": "property",
             "name": "type",
@@ -434,7 +481,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 203,
+            "line": 619,
             "description": "Whether the property is validated right.",
             "itemtype": "property",
             "name": "validated",
@@ -445,68 +492,11 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 212,
+            "line": 628,
             "description": "The width of the element: when not set, it will be auto-fitted.\nYou should specify a number, which is used as `em`-width.",
             "itemtype": "property",
             "name": "width",
             "type": "Number",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 226,
-            "description": "componentDidMount will call `this.activatePlaces()`;",
-            "itemtype": "method",
-            "name": "componentDidMount",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 240,
-            "description": "componentWilUnmount does some cleanup.",
-            "itemtype": "method",
-            "name": "componentWillUnmount",
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 250,
-            "description": "Sets the focus on the Component.",
-            "itemtype": "method",
-            "name": "focus",
-            "chainable": 1,
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 262,
-            "description": "Returns the initial state.",
-            "itemtype": "method",
-            "name": "getInitialState",
-            "return": {
-                "description": "Object"
-            },
-            "since": "0.0.1",
-            "class": "Checkbox",
-            "module": "itsa-react-checkbox"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 276,
-            "description": "React render-method --> renderes the Component.",
-            "itemtype": "method",
-            "name": "render",
-            "return": {
-                "description": "ReactComponent"
-            },
             "since": "0.0.1",
             "class": "Checkbox",
             "module": "itsa-react-checkbox"
