@@ -37,6 +37,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -70,6 +71,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -103,6 +105,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -136,6 +139,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -169,6 +173,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "5em"}}
               tabIndex={0}>
@@ -202,6 +207,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "12em"}}
               tabIndex={0}>
@@ -235,6 +241,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -275,6 +282,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>
@@ -308,6 +316,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{fontSize:"5em", width: "4em"}}
               tabIndex={0}>
@@ -341,6 +350,7 @@ describe("React Component", function () {
               onClick={function noRefCheck() {}}
               onFocus={function noRefCheck() {}}
               onKeyPress={function noRefCheck() {}}
+              ref={function noRefCheck() {}}
               role="checkbox"
               style={{width: "4em"}}
               tabIndex={0}>

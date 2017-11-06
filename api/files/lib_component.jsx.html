@@ -104,7 +104,6 @@ require(&quot;itsa-dom&quot;);
 let IE8_Events;
 
 const React = require(&quot;react&quot;),
-    ReactDom = require(&quot;react-dom&quot;),
     PropTypes = require(&quot;prop-types&quot;),
     later = require(&quot;itsa-utils&quot;).later,
     MAIN_CLASS = &quot;itsa-checkbox&quot;,
@@ -152,7 +151,6 @@ class Checkbox extends React.Component {
      */
     componentDidMount() {
         const instance = this;
-        instance._domNode = ReactDom.findDOMNode(instance);
         IE8_Events = !instance._domNode.addEventListener;
         instance._constrainNode = instance._domNode.querySelector(&quot;.&quot;+MAIN_CLASS_PREFIX+&quot;constrain&quot;);
         instance._containerNode = instance._domNode.querySelector(&quot;.&quot;+MAIN_CLASS_PREFIX+&quot;container&quot;);
@@ -465,6 +463,7 @@ class Checkbox extends React.Component {
                 onClick={instance.handleClick}
                 onFocus={instance.handleFocus}
                 onKeyPress={instance.handleKeyPress}
+                ref={node =&gt; instance._domNode = node}
                 role=&quot;checkbox&quot;
                 style={elementStyles}
                 tabIndex={tabIndex} &gt;

@@ -55,7 +55,7 @@
     "classitems": [
         {
             "file": "lib/component.jsx",
-            "line": 64,
+            "line": 63,
             "description": "componentDidMount will call `this.activatePlaces()`;",
             "itemtype": "method",
             "name": "componentDidMount",
@@ -65,7 +65,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 82,
+            "line": 80,
             "description": "componentWilUnmount does some cleanup.",
             "itemtype": "method",
             "name": "componentWillUnmount",
@@ -75,7 +75,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 93,
+            "line": 91,
             "description": "Detaches some window-eventlisteners.",
             "itemtype": "method",
             "name": "detachDragEvents",
@@ -86,7 +86,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 112,
+            "line": 110,
             "description": "Sets the focus on the Component.",
             "itemtype": "method",
             "name": "focus",
@@ -105,7 +105,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 126,
+            "line": 124,
             "description": "Callback-fn for the onBlur-event.\nsets internal `_focussed`-property false",
             "itemtype": "method",
             "name": "handleBlur",
@@ -115,7 +115,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 137,
+            "line": 135,
             "description": "Callback-fn for the onClick-event.\nWill invoke `this.props.onChange`",
             "itemtype": "method",
             "name": "handleClick",
@@ -125,7 +125,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 157,
+            "line": 155,
             "description": "Callback-fn for the onFocus-event.\nsets internal `_focussed`-property true",
             "itemtype": "method",
             "name": "handleFocus",
@@ -135,7 +135,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 168,
+            "line": 166,
             "description": "Callback-fn for the onKeyPress-event.\nWill invoke `this.props.onChange` when the spacebar was pressed.",
             "itemtype": "method",
             "name": "handleKeyPress",
@@ -152,7 +152,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 188,
+            "line": 186,
             "description": "Callback-fn for the onMouseDown-event.\nPrepares for dragging the button.",
             "itemtype": "method",
             "name": "handleMouseDown",
@@ -169,7 +169,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 210,
+            "line": 208,
             "description": "Callback-fn for the onMouseMove-event.\nHandles dragging of the button.",
             "itemtype": "method",
             "name": "handleMouseMove",
@@ -186,7 +186,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 237,
+            "line": 235,
             "description": "Callback-fn for the onMouseUp-event.\nFinalizes button-dragging.",
             "itemtype": "method",
             "name": "handleMouseUp",
@@ -203,7 +203,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 269,
+            "line": 267,
             "description": "Callback-fn for the onTouchMove-event.\nHandles dragging of the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchMove",
@@ -220,7 +220,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 289,
+            "line": 287,
             "description": "Callback-fn for the onTouchStart-event.\nPrepares for dragging the button on mobile devices.",
             "itemtype": "method",
             "name": "handleTouchStart",
@@ -237,7 +237,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 309,
+            "line": 307,
             "description": "React render-method --> renderes the Component.",
             "itemtype": "method",
             "name": "render",
@@ -250,7 +250,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 406,
+            "line": 405,
             "description": "Sets some window-eventlisteners.",
             "itemtype": "method",
             "name": "setDragEvents",
@@ -261,7 +261,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 432,
+            "line": 431,
             "description": "Whether to autofocus the Component.",
             "itemtype": "property",
             "name": "autoFocus",
@@ -272,7 +272,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 441,
+            "line": 440,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgChecked",
@@ -284,7 +284,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 451,
+            "line": 450,
             "description": "Background-color of the `checked`-label",
             "itemtype": "property",
             "name": "bgButton",
@@ -296,7 +296,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 461,
+            "line": 460,
             "description": "Background-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "bgUnchecked",
@@ -308,7 +308,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 471,
+            "line": 470,
             "description": "Whether the checkbox is checked\n<b>required</b>",
             "itemtype": "property",
             "name": "checked",
@@ -319,7 +319,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 481,
+            "line": 480,
             "description": "The class that should be set on the element",
             "itemtype": "property",
             "name": "className",
@@ -330,7 +330,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 490,
+            "line": 489,
             "description": "Font-color of the `checked`-label",
             "itemtype": "property",
             "name": "colorChecked",
@@ -342,7 +342,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 500,
+            "line": 499,
             "description": "The font-color of the `unchecked`-label",
             "itemtype": "property",
             "name": "colorUnchecked",
@@ -354,7 +354,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 510,
+            "line": 509,
             "description": "Whether the checkbox is disabled",
             "itemtype": "property",
             "name": "disabled",
@@ -366,7 +366,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 520,
+            "line": 519,
             "description": "font-size of the element. Best specified in `em`",
             "itemtype": "property",
             "name": "fontSize",
@@ -378,7 +378,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 530,
+            "line": 529,
             "description": "Whether the parent-form has been validated.\nThis value is needed to determine if the validate-status should be set.",
             "itemtype": "property",
             "name": "formValidated",
@@ -389,7 +389,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 540,
+            "line": 539,
             "description": "The label when switched `off`",
             "itemtype": "property",
             "name": "labelOff",
@@ -401,7 +401,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 550,
+            "line": 549,
             "description": "The label when switched `on`",
             "itemtype": "property",
             "name": "labelOn",
@@ -413,7 +413,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 560,
+            "line": 559,
             "description": "The callback whenever the checkbox wants to change its value.\nUse this callback to change `this.prop.checked` of the element\n<b>required</b>",
             "itemtype": "property",
             "name": "onChange",
@@ -424,7 +424,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 571,
+            "line": 570,
             "description": "The callback whenever the checkbox is clicked.\nDoes not effect its behavious, but can be used to stop propagation",
             "itemtype": "property",
             "name": "onClick",
@@ -435,7 +435,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 581,
+            "line": 580,
             "description": "Whether the checkbox is readonly",
             "itemtype": "property",
             "name": "readOnly",
@@ -447,7 +447,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 591,
+            "line": 590,
             "description": "Whether the checkbox should be rendered in a `square`-style instead of rounded",
             "itemtype": "property",
             "name": "square",
@@ -459,7 +459,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 601,
+            "line": 600,
             "description": "Inline style",
             "itemtype": "property",
             "name": "style",
@@ -470,7 +470,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 610,
+            "line": 609,
             "description": "The tabindex of the Component.",
             "itemtype": "property",
             "name": "type",
@@ -481,7 +481,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 619,
+            "line": 618,
             "description": "Whether the property is validated right.",
             "itemtype": "property",
             "name": "validated",
@@ -492,7 +492,7 @@
         },
         {
             "file": "lib/component.jsx",
-            "line": 628,
+            "line": 627,
             "description": "The width of the element: when not set, it will be auto-fitted.\nYou should specify a number, which is used as `em`-width.",
             "itemtype": "property",
             "name": "width",
